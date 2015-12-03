@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EventsConnectionModelStoreContainer" CdmEntityContainer="EventsConnectionEntities">
+    <EntitySetMapping Name="Cursus">
+      <EntityTypeMapping TypeName="IsTypeOf(EventsConnectionModel.Cursus)">
+        <MappingFragment StoreEntitySet="Cursus">
+          <ScalarProperty Name="CursusId" ColumnName="CursusId" />
+          <ScalarProperty Name="CursusNaam" ColumnName="CursusNaam" />
+          <ScalarProperty Name="CursusInfo" ColumnName="CursusInfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CursusInschrijving">
+      <EntityTypeMapping TypeName="IsTypeOf(EventsConnectionModel.CursusInschrijving)">
+        <MappingFragment StoreEntitySet="CursusInschrijving">
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="CursusId" ColumnName="CursusId" />
+          <ScalarProperty Name="CursusInschrijvingId" ColumnName="CursusInschrijvingId" />
+          <ScalarProperty Name="VoorNaam" ColumnName="VoorNaam" />
+          <ScalarProperty Name="AchterNaam" ColumnName="AchterNaam" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="TelefoonGsm" ColumnName="TelefoonGsm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

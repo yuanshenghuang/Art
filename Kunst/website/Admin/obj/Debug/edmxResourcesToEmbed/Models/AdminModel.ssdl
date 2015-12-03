@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KunstdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Afmetingens">
+    <Key>
+      <PropertyRef Name="AfmetingenId" />
+    </Key>
+    <Property Name="AfmetingenId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hoogte" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Breedte" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Diepte" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Diameter" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Kunstwerk1" Type="int" Nullable="false" />
+    <Property Name="Kunstwerk11_KunstwerkId" Type="int" />
+  </EntityType>
+  <EntityType Name="Kunstwerks">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="KunstwerkId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Categorie" Type="nvarchar(max)" />
+    <Property Name="Titel" Type="nvarchar(max)" />
+    <Property Name="Foto" Type="nvarchar(max)" />
+    <Property Name="Afmetingen" Type="int" />
+    <Property Name="BeschrijvingNL" Type="nvarchar(max)" />
+    <Property Name="BeschrijvingEN" Type="nvarchar(max)" />
+    <Property Name="BeschrijvingFR" Type="nvarchar(max)" />
+    <Property Name="BeschrijvingDE" Type="nvarchar(max)" />
+    <Property Name="Speech" Type="nvarchar(max)" />
+    <Property Name="Folder" Type="nvarchar(max)" />
+    <Property Name="Pers" Type="nvarchar(max)" />
+    <Property Name="Tentoongesteld" Type="bit" />
+    <Property Name="Tentoonstelling" Type="int" />
+    <Property Name="Website" Type="bit" />
+    <Property Name="Code" Type="int" />
+    <Property Name="CreatieMat" Type="nvarchar(max)" />
+    <Property Name="UitvoeringsMat" Type="nvarchar(max)" />
+    <Property Name="Signatie" Type="nvarchar(max)" />
+    <Property Name="Werkplaats" Type="int" />
+    <Property Name="MalMatrijs" Type="int" />
+    <Property Name="DatumGemaakt" Type="datetime" />
+    <Property Name="Opdracht" Type="bit" />
+    <Property Name="Opdrachtgever" Type="int" />
+    <Property Name="CreatieMatDrager" Type="nvarchar(max)" />
+    <Property Name="CreatieMatGebruikt" Type="nvarchar(max)" />
+    <Property Name="Signatie1" Type="nvarchar(max)" />
+    <Property Name="Certifikaat" Type="bit" />
+    <Property Name="CertifikaatBezorgd" Type="bit" />
+    <Property Name="Code1" Type="nvarchar(max)" />
+    <Property Name="Werkplaats1" Type="int" />
+    <Property Name="Discriminator" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_Afmetingens_dbo_Kunstwerks_Kunstwerk11_KunstwerkId">
+    <End Role="Kunstwerks" Type="Self.Kunstwerks" Multiplicity="0..1" />
+    <End Role="Afmetingens" Type="Self.Afmetingens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kunstwerks">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="Afmetingens">
+        <PropertyRef Name="Kunstwerk11_KunstwerkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KunstdbModelStoreContainer">
+    <EntitySet Name="Afmetingens" EntityType="Self.Afmetingens" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kunstwerks" EntityType="Self.Kunstwerks" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_Afmetingens_dbo_Kunstwerks_Kunstwerk11_KunstwerkId" Association="Self.FK_dbo_Afmetingens_dbo_Kunstwerks_Kunstwerk11_KunstwerkId">
+      <End Role="Kunstwerks" EntitySet="Kunstwerks" />
+      <End Role="Afmetingens" EntitySet="Afmetingens" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

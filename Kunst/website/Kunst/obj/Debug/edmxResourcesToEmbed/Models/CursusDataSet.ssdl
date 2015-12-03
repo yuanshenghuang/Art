@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EventsConnectionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cursus">
+    <Key>
+      <PropertyRef Name="CursusId" />
+    </Key>
+    <Property Name="CursusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CursusNaam" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CursusInfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CursusInschrijving">
+    <Key>
+      <PropertyRef Name="CursusInschrijvingId" />
+    </Key>
+    <Property Name="CursusInschrijvingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VoorNaam" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AchterNaam" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="TelefoonGsm" Type="nvarchar" MaxLength="20" />
+    <Property Name="CursusId" Type="int" Nullable="false" />
+    <Property Name="datum" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_CursusInschrijving">
+    <End Role="Cursus" Type="Self.Cursus" Multiplicity="1" />
+    <End Role="CursusInschrijving" Type="Self.CursusInschrijving" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cursus">
+        <PropertyRef Name="CursusId" />
+      </Principal>
+      <Dependent Role="CursusInschrijving">
+        <PropertyRef Name="CursusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EventsConnectionModelStoreContainer">
+    <EntitySet Name="Cursus" EntityType="Self.Cursus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CursusInschrijving" EntityType="Self.CursusInschrijving" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CursusInschrijving" Association="Self.FK_CursusInschrijving">
+      <End Role="Cursus" EntitySet="Cursus" />
+      <End Role="CursusInschrijving" EntitySet="CursusInschrijving" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

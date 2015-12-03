@@ -1,0 +1,28 @@
+﻿@using Kunst.Models;
+@using Microsoft.AspNet.Identity;
+
+@{
+    ViewBag.Title = "Manage Account"; 
+   
+}
+
+<h2>@ViewBag.Title.</h2>
+
+
+<div class="row">
+    <div class="col-md-12">
+        @if (ViewBag.HasLocalPassword)
+        {
+            @Html.Partial("_ChangePasswordPartial")
+        }
+        else
+        {
+            @Html.Partial("_SetPasswordPartial")
+        }
+    </div>
+</div>
+<p style="color:yellow;">@ViewBag.StatusMessage</p>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

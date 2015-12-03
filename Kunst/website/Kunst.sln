@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kunst", "Kunst\Kunst.csproj", "{99703F33-9B2A-46BF-8FAD-A8B46ECFC8F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "Resources\Resources.csproj", "{0BBFB2F6-52F5-4968-8FDB-D3D0A4B26B5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{722B662F-FB85-4C50-B660-932EC35A6654}"
+	ProjectSection(SolutionItems) = preProject
+		Images\agenda.gif = Images\agenda.gif
+		Images\begraafplaats.jpg = Images\begraafplaats.jpg
+		Images\bray.jpg = Images\bray.jpg
+		Images\closed.jpg = Images\closed.jpg
+		Images\clown.jpg = Images\clown.jpg
+		Images\communicatie.jpg = Images\communicatie.jpg
+		Images\destinos.jpg = Images\destinos.jpg
+		Images\eenheid.jpg = Images\eenheid.jpg
+		Images\hoogzomer.jpg = Images\hoogzomer.jpg
+		Images\hospitium.jpg = Images\hospitium.jpg
+		Images\hulde.jpg = Images\hulde.jpg
+		Images\jij.jpg = Images\jij.jpg
+		Images\levensritme.jpg = Images\levensritme.jpg
+		Images\meisje.jpg = Images\meisje.jpg
+		Images\onmacht.jpg = Images\onmacht.jpg
+		Images\rondedans.jpg = Images\rondedans.jpg
+		Images\rozemie.jpg = Images\rozemie.jpg
+		Images\seizoenen.jpg = Images\seizoenen.jpg
+		Images\twijfel.jpg = Images\twijfel.jpg
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin", "Admin\Admin.csproj", "{29F0F0F5-6973-48D9-9836-711CC3248199}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99703F33-9B2A-46BF-8FAD-A8B46ECFC8F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99703F33-9B2A-46BF-8FAD-A8B46ECFC8F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99703F33-9B2A-46BF-8FAD-A8B46ECFC8F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99703F33-9B2A-46BF-8FAD-A8B46ECFC8F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BBFB2F6-52F5-4968-8FDB-D3D0A4B26B5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BBFB2F6-52F5-4968-8FDB-D3D0A4B26B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BBFB2F6-52F5-4968-8FDB-D3D0A4B26B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BBFB2F6-52F5-4968-8FDB-D3D0A4B26B5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29F0F0F5-6973-48D9-9836-711CC3248199}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F0F0F5-6973-48D9-9836-711CC3248199}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F0F0F5-6973-48D9-9836-711CC3248199}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F0F0F5-6973-48D9-9836-711CC3248199}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,105 @@
+﻿@model Kunst.Models.KunstwerkViewModel 
+
+@{   
+    Layout = null;
+ 
+}
+
+<h2>@Resources.Resources.Details</h2>
+
+<div>
+    
+    <dl class="dl-horizontal">
+
+        @foreach (var item in Model.DrieDwerkens)
+        {           
+            <dt>@Resources.Resources.Jaar</dt>
+            <dd>
+               ´@item.Code.ToString().Substring(2,2)
+            </dd>
+            <dt>@Resources.Resources.Creatiemateriaal</dt>
+            <dd>
+                @item.CreatieMat
+            </dd>
+            <dt>@Resources.Resources.Uitvoeringsmateriaal</dt>
+            <dd>
+                @item.UitvoeringsMat
+            </dd>           
+           
+        }
+
+        @foreach (var item in Model.TweeDwerkens)
+        {
+            <dt>@Resources.Resources.Jaar</dt>
+            <dd>
+                ´@item.Code.Substring(2, 2)
+            </dd>
+            <dt>@Resources.Resources.Creatiemateriaal</dt>
+            <dd>
+                @item.CreatieMatDrager
+            </dd>
+            <dt>@Resources.Resources.Creatiemateriaal</dt>
+            <dd>
+                @item.CreatieMatGebruikt
+            </dd>
+        }
+
+        @foreach (var item in Model.afmetingens)
+        {
+            <dt>@Resources.Resources.Hoogte</dt>
+            <dd>
+                @item.Hoogte
+            </dd>
+            <dt>@Resources.Resources.Breedte</dt>
+            <dd>
+                @item.Breedte
+            </dd>
+            <dt>@Resources.Resources.Diepte</dt>
+            <dd>
+                @item.Diepte
+            </dd>
+            <dt>@Resources.Resources.Diameter</dt>
+            <dd>
+                @item.Diameter
+            </dd>
+        }
+
+
+        @foreach (var item in Model.Kunstwerks)
+        {
+            <dt>@Resources.Resources.Title</dt>
+            <dd>
+                @item.Titel
+            </dd>
+            <dt>@Resources.Resources.Beschrijving</dt>
+            <dd>
+               @item.BeschrijvingNL               
+            </dd>
+            
+            <dd>
+                @item.BeschrijvingEN        
+            </dd>
+           
+            <dd>
+                @item.BeschrijvingFR                
+            </dd>
+          
+            <dd>
+                @item.BeschrijvingDE                             
+            </dd>
+
+            <dd>
+                <img src="@Url.Action("GetImage", "Kunstwerk", new { imageName = item.Foto })" alt="" width="500" height="400" />
+               
+            </dd>
+        }
+
+         
+    </dl>
+</div>
+<p>
+    @foreach (var item in Model.Kunstwerks)
+    {
+        @Ajax.ActionLink(@Resources.Resources.Back, "Kunstwerk", "Kunstwerk", new { category = @item.Categorie }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace }, new { style = "color:#ffd800" })
+    }
+</p>

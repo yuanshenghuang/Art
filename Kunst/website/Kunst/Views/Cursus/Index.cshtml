@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Kunst.Models.Cursus>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+ <div id="inhoud">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CursusNaam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CursusInfo)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CursusNaam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CursusInfo)
+                </td>
+                <td>
+                    @Ajax.ActionLink(@Resources.Resources.Inschrijven, "Create", "CursusInschrijvings", new { id = item.CursusId }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace },  new {@id = "inschrijvenbutton", style = "color:#ffd800" })
+                    @*@Html.ActionLink(@Resources.Resources.Inschrijven, "Create", "CursusInschrijvings", new { id = item.CursusId }, new { @class = "inschrijvenbutton", style = "color:#ffd800" })*@
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

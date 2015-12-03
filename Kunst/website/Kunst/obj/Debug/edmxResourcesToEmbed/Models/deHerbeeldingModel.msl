@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="deHerbeeldingModelStoreContainer" CdmEntityContainer="deHerbeeldingEntities">
+    <EntitySetMapping Name="Afmetingen">
+      <EntityTypeMapping TypeName="deHerbeeldingModel.Afmetingen">
+        <MappingFragment StoreEntitySet="Afmetingen">
+          <ScalarProperty Name="Kunstwerk1" ColumnName="Kunstwerk" />
+          <ScalarProperty Name="Diameter" ColumnName="Diameter" />
+          <ScalarProperty Name="Diepte" ColumnName="Diepte" />
+          <ScalarProperty Name="Breedte" ColumnName="Breedte" />
+          <ScalarProperty Name="Hoogte" ColumnName="Hoogte" />
+          <ScalarProperty Name="AfmetingenId" ColumnName="AfmetingenId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kopie">
+      <EntityTypeMapping TypeName="deHerbeeldingModel.Kopie">
+        <MappingFragment StoreEntitySet="Kopie">
+          <ScalarProperty Name="MalMatrijs1" ColumnName="MalMatrijs" />
+          <ScalarProperty Name="WassenBeeld1" ColumnName="WassenBeeld" />
+          <ScalarProperty Name="TweeDWerk" ColumnName="TweeDWerk" />
+          <ScalarProperty Name="Koper" ColumnName="Koper" />
+          <ScalarProperty Name="Maker" ColumnName="Maker" />
+          <ScalarProperty Name="Prijs" ColumnName="Prijs" />
+          <ScalarProperty Name="VerkoopPrijs" ColumnName="VerkoopPrijs" />
+          <ScalarProperty Name="GietPrijs" ColumnName="GietPrijs" />
+          <ScalarProperty Name="KopieNr" ColumnName="KopieNr" />
+          <ScalarProperty Name="CertifikaatBezorgd" ColumnName="CertifikaatBezorgd" />
+          <ScalarProperty Name="Certifikaat" ColumnName="Certifikaat" />
+          <ScalarProperty Name="Verkocht" ColumnName="Verkocht" />
+          <ScalarProperty Name="DatumOpgehaald" ColumnName="DatumOpgehaald" />
+          <ScalarProperty Name="DatumBesteld" ColumnName="DatumBesteld" />
+          <ScalarProperty Name="Kleur" ColumnName="Kleur" />
+          <ScalarProperty Name="Besteld" ColumnName="Besteld" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="KopieId" ColumnName="KopieId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kunstwerk">
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.TweeDWerken)" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <MappingFragment StoreEntitySet="TweeDWerken">
+          <ScalarProperty Name="Werkplaats" ColumnName="Werkplaats" />
+          <ScalarProperty Name="KunstwerkId" ColumnName="KunstwerkId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="CertifikaatBezorgd" ColumnName="CertifikaatBezorgd" />
+          <ScalarProperty Name="Certifikaat" ColumnName="Certifikaat" />
+          <ScalarProperty Name="Signatie" ColumnName="Signatie" />
+          <ScalarProperty Name="CreatieMatGebruikt" ColumnName="CreatieMatGebruikt" />
+          <ScalarProperty Name="CreatieMatDrager" ColumnName="CreatieMatDrager" />
+          <ScalarProperty Name="Opdrachtgever" ColumnName="Opdrachtgever" />
+          <ScalarProperty Name="Opdracht" ColumnName="Opdracht" />
+          <ScalarProperty Name="DatumGemaakt" ColumnName="DatumGemaakt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.Schilderij)" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <MappingFragment StoreEntitySet="Schilderij">
+          <ScalarProperty Name="KunstwerkId" ColumnName="KunstwerkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.Tekening)" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <MappingFragment StoreEntitySet="Tekening">
+          <ScalarProperty Name="KunstwerkId" ColumnName="KunstwerkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.Collage)" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <MappingFragment StoreEntitySet="Collage">
+          <ScalarProperty Name="KunstwerkId" ColumnName="KunstwerkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.Kunstwerk)">
+        <MappingFragment StoreEntitySet="Kunstwerk">
+          <ScalarProperty Name="KunstwerkId" ColumnName="KunstwerkId" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Tentoonstelling" ColumnName="Tentoonstelling" />
+          <ScalarProperty Name="Tentoongesteld" ColumnName="Tentoongesteld" />
+          <ScalarProperty Name="Pers" ColumnName="Pers" />
+          <ScalarProperty Name="Folder" ColumnName="Folder" />
+          <ScalarProperty Name="Speech" ColumnName="Speech" />
+          <ScalarProperty Name="BeschrijvingDE" ColumnName="BeschrijvingDE" />
+          <ScalarProperty Name="BeschrijvingFR" ColumnName="BeschrijvingFR" />
+          <ScalarProperty Name="BeschrijvingEN" ColumnName="BeschrijvingEN" />
+          <ScalarProperty Name="BeschrijvingNL" ColumnName="BeschrijvingNL" />
+          <ScalarProperty Name="Afmetingen" ColumnName="Afmetingen" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="Titel" ColumnName="Titel" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.GeschrevenWerken)" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <MappingFragment StoreEntitySet="GeschrevenWerken">
+          <ScalarProperty Name="KunstwerkId" ColumnName="KunstwerkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.GrootFormaat)" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <MappingFragment StoreEntitySet="GrootFormaat">
+          <ScalarProperty Name="Koper2" ColumnName="Koper" />
+          <ScalarProperty Name="KunstwerkId" ColumnName="KunstwerkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.Poezie)" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <MappingFragment StoreEntitySet="Poezie">
+          <ScalarProperty Name="KunstwerkId" ColumnName="KunstwerkId" />
+          <ScalarProperty Name="Opdracht" ColumnName="Opdracht" />
+          <ScalarProperty Name="Tekstkaart" ColumnName="Tekstkaart" />
+          <ScalarProperty Name="Tekst" ColumnName="Tekst" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.Boek)" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <MappingFragment StoreEntitySet="Boek">
+          <ScalarProperty Name="KunstwerkId" ColumnName="KunstwerkId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Thema" ColumnName="Thema" />
+          <ScalarProperty Name="KorteInhoud" ColumnName="KorteInhoud" />
+          <ScalarProperty Name="Uitgever" ColumnName="Uitgever" />
+          <ScalarProperty Name="Oplage" ColumnName="Oplage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.DrieDWerken)">
+        <MappingFragment StoreEntitySet="DrieDWerken">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="CreatieMat" ColumnName="CreatieMat" />
+          <ScalarProperty Name="UitvoeringsMat" ColumnName="UitvoeringsMat" />
+          <ScalarProperty Name="Signatie" ColumnName="Signatie" />
+          <ScalarProperty Name="KunstwerkId" ColumnName="KunstwerkId" />
+          <ScalarProperty Name="Werkplaats" ColumnName="Werkplaats" />
+          <ScalarProperty Name="MalMatrijs" ColumnName="MalMatrijs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.Medaille)">
+        <MappingFragment StoreEntitySet="Medaille">
+          <ScalarProperty Name="VrijWerk" ColumnName="VrijWerk" />
+          <ScalarProperty Name="Afspraken" ColumnName="Afspraken" />
+          <ScalarProperty Name="KunstwerkId" ColumnName="KunstwerkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.Relief)">
+        <MappingFragment StoreEntitySet="Relief">
+          <ScalarProperty Name="KunstwerkId" ColumnName="KunstwerkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.Dodenmasker)">
+        <MappingFragment StoreEntitySet="Dodenmasker">
+          <ScalarProperty Name="Persoon" ColumnName="Persoon" />
+          <ScalarProperty Name="GeboorteDatum" ColumnName="GeboorteDatum" />
+          <ScalarProperty Name="GeboortePlaats" ColumnName="GeboortePlaats" />
+          <ScalarProperty Name="OverlijdensDatum" ColumnName="OverlijdensDatum" />
+          <ScalarProperty Name="OverlijdensPlaats" ColumnName="OverlijdensPlaats" />
+          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+          <ScalarProperty Name="Presentatie" ColumnName="Presentatie" />
+          <ScalarProperty Name="DatumGegoten" ColumnName="DatumGegoten" />
+          <ScalarProperty Name="WaarGegoten" ColumnName="WaarGegoten" />
+          <ScalarProperty Name="KunstwerkId" ColumnName="KunstwerkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.Portret)">
+        <MappingFragment StoreEntitySet="Portret">
+          <ScalarProperty Name="Poseren" ColumnName="Poseren" />
+          <ScalarProperty Name="Afspraak" ColumnName="Afspraak" />
+          <ScalarProperty Name="WerkenFotos" ColumnName="WerkenFotos" />
+          <ScalarProperty Name="FotosMaken" ColumnName="FotosMaken" />
+          <ScalarProperty Name="FotosGebracht" ColumnName="FotosGebracht" />
+          <ScalarProperty Name="CombiFotos" ColumnName="CombiFotos" />
+          <ScalarProperty Name="Verwachtingen" ColumnName="Verwachtingen" />
+          <ScalarProperty Name="DatumOplevering" ColumnName="DatumOplevering" />
+          <ScalarProperty Name="KunstwerkId" ColumnName="KunstwerkId" />
+          <ScalarProperty Name="Poseerder" ColumnName="Poseerder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.Kleischets)">
+        <MappingFragment StoreEntitySet="Kleischets">
+          <ScalarProperty Name="KunstwerkId" ColumnName="KunstwerkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.Beeld)">
+        <MappingFragment StoreEntitySet="Beeld">
+          <ScalarProperty Name="KunstwerkId" ColumnName="KunstwerkId" />
+          <ScalarProperty Name="Kleischets" ColumnName="Kleischets" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MalMatrijs">
+      <EntityTypeMapping TypeName="deHerbeeldingModel.MalMatrijs">
+        <MappingFragment StoreEntitySet="MalMatrijs">
+          <ScalarProperty Name="Maker" ColumnName="Maker" />
+          <ScalarProperty Name="WassenBeeld" ColumnName="WassenBeeld" />
+          <ScalarProperty Name="Staat" ColumnName="Staat" />
+          <ScalarProperty Name="Prijs" ColumnName="Prijs" />
+          <ScalarProperty Name="Hoeveelheden" ColumnName="Hoeveelheden" />
+          <ScalarProperty Name="DatumGemaakt" ColumnName="DatumGemaakt" />
+          <ScalarProperty Name="Materiaal" ColumnName="Materiaal" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="MalId" ColumnName="MalId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedailleStamp">
+      <EntityTypeMapping TypeName="deHerbeeldingModel.MedailleStamp">
+        <MappingFragment StoreEntitySet="MedailleStamp">
+          <ScalarProperty Name="Medaille1" ColumnName="Medaille" />
+          <ScalarProperty Name="Afmetingen" ColumnName="Afmetingen" />
+          <ScalarProperty Name="WaarGemaakt" ColumnName="WaarGemaakt" />
+          <ScalarProperty Name="Nummer" ColumnName="Nummer" />
+          <ScalarProperty Name="Aantal" ColumnName="Aantal" />
+          <ScalarProperty Name="StampId" ColumnName="StampId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Persoon">
+      <EntityTypeMapping TypeName="deHerbeeldingModel.Persoon">
+        <MappingFragment StoreEntitySet="Persoon">
+          <ScalarProperty Name="Poseerder" ColumnName="Poseerder" />
+          <ScalarProperty Name="Bronsgieter" ColumnName="Bronsgieter" />
+          <ScalarProperty Name="Koper" ColumnName="Koper" />
+          <ScalarProperty Name="Opdrachtgever" ColumnName="Opdrachtgever" />
+          <ScalarProperty Name="Telefoon" ColumnName="Telefoon" />
+          <ScalarProperty Name="Gsm" ColumnName="Gsm" />
+          <ScalarProperty Name="Naam" ColumnName="Naam" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PersoonId" ColumnName="PersoonId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tentoonstelling">
+      <EntityTypeMapping TypeName="deHerbeeldingModel.Tentoonstelling">
+        <MappingFragment StoreEntitySet="Tentoonstelling">
+          <ScalarProperty Name="EindDatum" ColumnName="EindDatum" />
+          <ScalarProperty Name="BeginDatum" ColumnName="BeginDatum" />
+          <ScalarProperty Name="TentoonstellingId" ColumnName="TentoonstellingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WassenBeeld">
+      <EntityTypeMapping TypeName="deHerbeeldingModel.WassenBeeld">
+        <MappingFragment StoreEntitySet="WassenBeeld">
+          <ScalarProperty Name="Maker" ColumnName="Maker" />
+          <ScalarProperty Name="Nummer" ColumnName="Nummer" />
+          <ScalarProperty Name="WassenBeeldId" ColumnName="WassenBeeldId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Adres">
+      <EntityTypeMapping TypeName="deHerbeeldingModel.Adres">
+        <MappingFragment StoreEntitySet="Adres">
+          <ScalarProperty Name="Land" ColumnName="Land" />
+          <ScalarProperty Name="Gemeente" ColumnName="Gemeente" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+          <ScalarProperty Name="HuisNr" ColumnName="HuisNr" />
+          <ScalarProperty Name="Straat" ColumnName="Straat" />
+          <ScalarProperty Name="AdresId" ColumnName="AdresId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CursusAdmin">
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.CursusAdmin)">
+        <MappingFragment StoreEntitySet="CursusAdmin">
+          <ScalarProperty Name="CursusId" ColumnName="CursusId" />
+          <ScalarProperty Name="CursusInfo" ColumnName="CursusInfo" />
+          <ScalarProperty Name="CursusNaam" ColumnName="CursusNaam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.CursusAfgietenAdmin)">
+        <MappingFragment StoreEntitySet="CursusAfgietenAdmin">
+          <ScalarProperty Name="CursusId" ColumnName="CursusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(deHerbeeldingModel.CursusBronsgieterAdmin)">
+        <MappingFragment StoreEntitySet="CursusBronsgieterAdmin">
+          <ScalarProperty Name="CursusId" ColumnName="CursusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CursusInschrijvingAdmin">
+      <EntityTypeMapping TypeName="deHerbeeldingModel.CursusInschrijvingAdmin">
+        <MappingFragment StoreEntitySet="CursusInschrijvingAdmin">
+          <ScalarProperty Name="Cursus" ColumnName="Cursus" />
+          <ScalarProperty Name="TelefoonGsm" ColumnName="TelefoonGsm" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="AchterNaam" ColumnName="AchterNaam" />
+          <ScalarProperty Name="VoorNaam" ColumnName="VoorNaam" />
+          <ScalarProperty Name="CursusInschrijvingId" ColumnName="CursusInschrijvingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventCursusAdmin">
+      <EntityTypeMapping TypeName="deHerbeeldingModel.EventCursusAdmin">
+        <MappingFragment StoreEntitySet="EventCursusAdmin">
+          <ScalarProperty Name="CursusInschrijving" ColumnName="CursusInschrijving" />
+          <ScalarProperty Name="EndEvent" ColumnName="EndEvent" />
+          <ScalarProperty Name="BeginEvent" ColumnName="BeginEvent" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

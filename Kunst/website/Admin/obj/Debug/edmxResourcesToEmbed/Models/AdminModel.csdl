@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KunstdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Afmetingens">
+    <Key>
+      <PropertyRef Name="AfmetingenId" />
+    </Key>
+    <Property Name="AfmetingenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Hoogte" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Breedte" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Diepte" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Diameter" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Kunstwerk1" Type="Int32" Nullable="false" />
+    <Property Name="Kunstwerk11_KunstwerkId" Type="Int32" />
+    <NavigationProperty Name="Kunstwerks" Relationship="Self.FK_dbo_Afmetingens_dbo_Kunstwerks_Kunstwerk11_KunstwerkId" FromRole="Afmetingens" ToRole="Kunstwerks" />
+  </EntityType>
+  <EntityType Name="Kunstwerks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Categorie" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Titel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Afmetingen" Type="Int32" />
+    <Property Name="BeschrijvingNL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BeschrijvingEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BeschrijvingFR" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BeschrijvingDE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Speech" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Folder" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Pers" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tentoongesteld" Type="Boolean" />
+    <Property Name="Tentoonstelling" Type="Int32" />
+    <Property Name="Website" Type="Boolean" />
+    <Property Name="Discriminator" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" Type="String" />
+    <NavigationProperty Name="Afmetingens" Relationship="Self.FK_dbo_Afmetingens_dbo_Kunstwerks_Kunstwerk11_KunstwerkId" FromRole="Kunstwerks" ToRole="Afmetingens" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_Afmetingens_dbo_Kunstwerks_Kunstwerk11_KunstwerkId">
+    <End Role="Kunstwerks" Type="Self.Kunstwerks" Multiplicity="0..1" />
+    <End Role="Afmetingens" Type="Self.Afmetingens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kunstwerks" />
+      <Dependent Role="Afmetingens" />
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KunstdbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Afmetingens" EntityType="Self.Afmetingens" />
+    <EntitySet Name="Kunstwerks" EntityType="Self.Kunstwerks" />
+    <AssociationSet Name="FK_dbo_Afmetingens_dbo_Kunstwerks_Kunstwerk11_KunstwerkId" Association="Self.FK_dbo_Afmetingens_dbo_Kunstwerks_Kunstwerk11_KunstwerkId">
+      <End Role="Kunstwerks" EntitySet="Kunstwerks" />
+      <End Role="Afmetingens" EntitySet="Afmetingens" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="DrieDWerken" BaseType="KunstdbModel.Kunstwerks">
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreatieMat" Type="String" Nullable="true" />
+    <Property Name="UitvoeringsMat" Type="String" Nullable="true" />
+    <Property Name="Signatie" Type="String" Nullable="true" />
+    <Property Name="Werkplaats" Type="Int32" Nullable="true" />
+    <Property Name="MalMatrijs" Type="Int32" Nullable="true" />
+  </EntityType>
+  <EntityType Name="TweeDWerken" BaseType="KunstdbModel.Kunstwerks">
+    <Property Name="DatumGemaakt" Type="DateTime" Nullable="true" />
+    <Property Name="Opdracht" Type="Boolean" Nullable="false" />
+    <Property Name="Opdrachtgever" Type="Int32" Nullable="true" />
+    <Property Name="CreatieMatDrager" Type="String" Nullable="true" />
+    <Property Name="CreatieMatGebruikt" Type="String" Nullable="true" />
+    <Property Name="Signatie" Type="String" Nullable="true" />
+    <Property Name="Certifikaat" Type="Boolean" Nullable="true" />
+    <Property Name="CertifikaatBezorgd" Type="Boolean" Nullable="true" />
+    <Property Name="Code" Type="String" Nullable="false" />
+    <Property Name="Werkplaats" Type="Int32" Nullable="true" />
+  </EntityType>
+</Schema>

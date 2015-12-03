@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="deHerbeeldingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="deHerbeeldingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Afmetingen" EntityType="deHerbeeldingModel.Afmetingen" />
+    <EntitySet Name="Kopie" EntityType="deHerbeeldingModel.Kopie" />
+    <EntitySet Name="Kunstwerk" EntityType="deHerbeeldingModel.Kunstwerk" />
+    <EntitySet Name="MalMatrijs" EntityType="deHerbeeldingModel.MalMatrijs" />
+    <EntitySet Name="MedailleStamp" EntityType="deHerbeeldingModel.MedailleStamp" />
+    <EntitySet Name="Persoon" EntityType="deHerbeeldingModel.Persoon" />
+    <EntitySet Name="Tentoonstelling" EntityType="deHerbeeldingModel.Tentoonstelling" />
+    <EntitySet Name="WassenBeeld" EntityType="deHerbeeldingModel.WassenBeeld" />
+    <AssociationSet Name="FK_StampAfmetingen" Association="deHerbeeldingModel.FK_StampAfmetingen">
+      <End Role="Afmetingen" EntitySet="Afmetingen" />
+      <End Role="MedailleStamp" EntitySet="MedailleStamp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DodenmaskerContact" Association="deHerbeeldingModel.FK_DodenmaskerContact">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="Dodenmasker" EntitySet="Kunstwerk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrieDWerkenMal" Association="deHerbeeldingModel.FK_DrieDWerkenMal">
+      <End Role="MalMatrijs" EntitySet="MalMatrijs" />
+      <End Role="DrieDWerken" EntitySet="Kunstwerk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KopieMaker" Association="deHerbeeldingModel.FK_KopieMaker">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="Kopie" EntitySet="Kopie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KunstwerkTentoonstelling" Association="deHerbeeldingModel.FK_KunstwerkTentoonstelling">
+      <End Role="Tentoonstelling" EntitySet="Tentoonstelling" />
+      <End Role="Kunstwerk" EntitySet="Kunstwerk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MalMaker" Association="deHerbeeldingModel.FK_MalMaker">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="MalMatrijs" EntitySet="MalMatrijs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MalWassenBeeld" Association="deHerbeeldingModel.FK_MalWassenBeeld">
+      <End Role="WassenBeeld" EntitySet="WassenBeeld" />
+      <End Role="MalMatrijs" EntitySet="MalMatrijs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PortretPoseerder" Association="deHerbeeldingModel.FK_PortretPoseerder">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="Portret" EntitySet="Kunstwerk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TweeDWerkenOpdrachtgever" Association="deHerbeeldingModel.FK_TweeDWerkenOpdrachtgever">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="TweeDWerken" EntitySet="Kunstwerk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WassenBeeldMaker" Association="deHerbeeldingModel.FK_WassenBeeldMaker">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="WassenBeeld" EntitySet="WassenBeeld" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GrootKoper" Association="deHerbeeldingModel.FK_GrootKoper">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="GrootFormaat" EntitySet="Kunstwerk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KopieKoper" Association="deHerbeeldingModel.FK_KopieKoper">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="Kopie" EntitySet="Kopie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrieDWerkenWerkplaats1" Association="deHerbeeldingModel.FK_DrieDWerkenWerkplaats1">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="DrieDWerken" EntitySet="Kunstwerk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KunstwerkAfmetingen1" Association="deHerbeeldingModel.FK_KunstwerkAfmetingen1">
+      <End Role="Kunstwerk" EntitySet="Kunstwerk" />
+      <End Role="Afmetingen" EntitySet="Afmetingen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedailleMedailleStamp1" Association="deHerbeeldingModel.FK_MedailleMedailleStamp1">
+      <End Role="Medaille" EntitySet="Kunstwerk" />
+      <End Role="MedailleStamp" EntitySet="MedailleStamp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TweeDWerkenKopie" Association="deHerbeeldingModel.FK_TweeDWerkenKopie">
+      <End Role="TweeDWerken" EntitySet="Kunstwerk" />
+      <End Role="Kopie" EntitySet="Kopie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WassenBeeldKopie1" Association="deHerbeeldingModel.FK_WassenBeeldKopie1">
+      <End Role="WassenBeeld" EntitySet="WassenBeeld" />
+      <End Role="Kopie" EntitySet="Kopie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MalKopie1" Association="deHerbeeldingModel.FK_MalKopie1">
+      <End Role="MalMatrijs" EntitySet="MalMatrijs" />
+      <End Role="Kopie" EntitySet="Kopie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BeeldKleischets" Association="deHerbeeldingModel.FK_BeeldKleischets">
+      <End Role="Kleischets" EntitySet="Kunstwerk" />
+      <End Role="Beeld" EntitySet="Kunstwerk" />
+    </AssociationSet>
+    <EntitySet Name="Adres" EntityType="deHerbeeldingModel.Adres" />
+    <AssociationSet Name="FK_PersoonAdres" Association="deHerbeeldingModel.FK_PersoonAdres">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="Adres" EntitySet="Adres" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TentoonstellingAdres" Association="deHerbeeldingModel.FK_TentoonstellingAdres">
+      <End Role="Tentoonstelling" EntitySet="Tentoonstelling" />
+      <End Role="Adres" EntitySet="Adres" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TweeDWerkenWerkplaats" Association="deHerbeeldingModel.FK_TweeDWerkenWerkplaats">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="TweeDWerken" EntitySet="Kunstwerk" />
+    </AssociationSet>
+    <EntitySet Name="CursusAdmin" EntityType="deHerbeeldingModel.CursusAdmin" />
+    <EntitySet Name="CursusInschrijvingAdmin" EntityType="deHerbeeldingModel.CursusInschrijvingAdmin" />
+    <EntitySet Name="EventCursusAdmin" EntityType="deHerbeeldingModel.EventCursusAdmin" />
+    <AssociationSet Name="FK_CursusInschrijvingAdmin" Association="deHerbeeldingModel.FK_CursusInschrijvingAdmin">
+      <End Role="CursusAdmin" EntitySet="CursusAdmin" />
+      <End Role="CursusInschrijvingAdmin" EntitySet="CursusInschrijvingAdmin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CursusInschrijvingEventAdmin" Association="deHerbeeldingModel.FK_CursusInschrijvingEventAdmin">
+      <End Role="CursusInschrijvingAdmin" EntitySet="CursusInschrijvingAdmin" />
+      <End Role="EventCursusAdmin" EntitySet="EventCursusAdmin" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Afmetingen">
+    <Key>
+      <PropertyRef Name="AfmetingenId" />
+    </Key>
+    <Property Name="AfmetingenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Hoogte" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Breedte" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Diepte" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Diameter" Type="Decimal" Precision="5" Scale="2" />
+    <NavigationProperty Name="MedailleStamp" Relationship="deHerbeeldingModel.FK_StampAfmetingen" FromRole="Afmetingen" ToRole="MedailleStamp" />
+    <Property Name="Kunstwerk1" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Kunstwerk11" Relationship="deHerbeeldingModel.FK_KunstwerkAfmetingen1" FromRole="Afmetingen" ToRole="Kunstwerk" />
+  </EntityType>
+  <EntityType Name="Boek" BaseType="deHerbeeldingModel.GeschrevenWerken">
+    <Property Name="Code" Type="Int32" Nullable="false" />
+    <Property Name="Thema" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="KorteInhoud" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Uitgever" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Oplage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Collage" BaseType="deHerbeeldingModel.TweeDWerken" />
+  <EntityType Name="Dodenmasker" BaseType="deHerbeeldingModel.DrieDWerken">
+    <Property Name="GeboorteDatum" Type="DateTime" Precision="3" />
+    <Property Name="GeboortePlaats" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OverlijdensDatum" Type="DateTime" Precision="3" />
+    <Property Name="OverlijdensPlaats" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ContactName" Type="DateTime" Precision="3" />
+    <Property Name="Presentatie" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DatumGegoten" Type="DateTime" Precision="3" />
+    <Property Name="WaarGegoten" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Persoon" Type="Int32" />
+    <NavigationProperty Name="Persoon1" Relationship="deHerbeeldingModel.FK_DodenmaskerContact" FromRole="Dodenmasker" ToRole="Persoon" />
+  </EntityType>
+  <EntityType Name="DrieDWerken" BaseType="deHerbeeldingModel.Kunstwerk">
+    <Property Name="Code" Type="Int32" Nullable="false" />
+    <Property Name="CreatieMat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UitvoeringsMat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Signatie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Werkplaats" Type="Int32" />
+    <Property Name="MalMatrijs" Type="Int32" />
+    <NavigationProperty Name="MalMatrijs1" Relationship="deHerbeeldingModel.FK_DrieDWerkenMal" FromRole="DrieDWerken" ToRole="MalMatrijs" />
+    <NavigationProperty Name="Persoon2" Relationship="deHerbeeldingModel.FK_DrieDWerkenWerkplaats1" FromRole="DrieDWerken" ToRole="Persoon" />
+  </EntityType>
+  <EntityType Name="GeschrevenWerken" BaseType="deHerbeeldingModel.Kunstwerk" />
+  <EntityType Name="GrootFormaat" BaseType="deHerbeeldingModel.GeschrevenWerken">
+    <Property Name="Koper2" Type="Int32" />
+    <NavigationProperty Name="Persoon" Relationship="deHerbeeldingModel.FK_GrootKoper" FromRole="GrootFormaat" ToRole="Persoon" />
+  </EntityType>
+  <EntityType Name="Kopie">
+    <Key>
+      <PropertyRef Name="KopieId" />
+    </Key>
+    <Property Name="KopieId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Besteld" Type="Boolean" />
+    <Property Name="Kleur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DatumBesteld" Type="DateTime" Precision="3" />
+    <Property Name="DatumOpgehaald" Type="DateTime" Precision="3" />
+    <Property Name="Verkocht" Type="Boolean" />
+    <Property Name="Certifikaat" Type="Boolean" />
+    <Property Name="CertifikaatBezorgd" Type="Boolean" />
+    <Property Name="KopieNr" Type="Int32" />
+    <Property Name="GietPrijs" Type="Int32" />
+    <Property Name="VerkoopPrijs" Type="Int32" />
+    <Property Name="Prijs" Type="Double" />
+    <Property Name="Maker" Type="Int32" />
+    <NavigationProperty Name="Persoon" Relationship="deHerbeeldingModel.FK_KopieMaker" FromRole="Kopie" ToRole="Persoon" />
+    <Property Name="Koper" Type="Int32" />
+    <NavigationProperty Name="Persoon1" Relationship="deHerbeeldingModel.FK_KopieKoper" FromRole="Kopie" ToRole="Persoon" />
+    <Property Name="TweeDWerk" Type="Int32" />
+    <NavigationProperty Name="TweeDWerken" Relationship="deHerbeeldingModel.FK_TweeDWerkenKopie" FromRole="Kopie" ToRole="TweeDWerken" />
+    <Property Name="WassenBeeld1" Type="Int32" />
+    <NavigationProperty Name="WassenBeeld11" Relationship="deHerbeeldingModel.FK_WassenBeeldKopie1" FromRole="Kopie" ToRole="WassenBeeld" />
+    <Property Name="MalMatrijs1" Type="Int32" />
+    <NavigationProperty Name="MalMatrijs11" Relationship="deHerbeeldingModel.FK_MalKopie1" FromRole="Kopie" ToRole="MalMatrijs" />
+  </EntityType>
+  <EntityType Name="Kunstwerk">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="KunstwerkId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Categorie" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Titel" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Foto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Afmetingen" Type="Int32" />
+    <Property Name="BeschrijvingNL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BeschrijvingEN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BeschrijvingFR" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BeschrijvingDE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Speech" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Folder" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Pers" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tentoongesteld" Type="Boolean" />
+    <Property Name="Tentoonstelling" Type="Int32" />
+    <Property Name="Website" Type="Boolean" />
+    <NavigationProperty Name="Tentoonstelling1" Relationship="deHerbeeldingModel.FK_KunstwerkTentoonstelling" FromRole="Kunstwerk" ToRole="Tentoonstelling" />
+    <NavigationProperty Name="Afmetingen11" Relationship="deHerbeeldingModel.FK_KunstwerkAfmetingen1" FromRole="Kunstwerk" ToRole="Afmetingen" />
+  </EntityType>
+  <EntityType Name="MalMatrijs">
+    <Key>
+      <PropertyRef Name="MalId" />
+    </Key>
+    <Property Name="MalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Materiaal" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DatumGemaakt" Type="DateTime" Precision="3" />
+    <Property Name="Hoeveelheden" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Prijs" Type="Double" />
+    <Property Name="Staat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="WassenBeeld" Type="Int32" />
+    <Property Name="Maker" Type="Int32" />
+    <NavigationProperty Name="DrieDWerken" Relationship="deHerbeeldingModel.FK_DrieDWerkenMal" FromRole="MalMatrijs" ToRole="DrieDWerken" />
+    <NavigationProperty Name="Persoon" Relationship="deHerbeeldingModel.FK_MalMaker" FromRole="MalMatrijs" ToRole="Persoon" />
+    <NavigationProperty Name="WassenBeeld1" Relationship="deHerbeeldingModel.FK_MalWassenBeeld" FromRole="MalMatrijs" ToRole="WassenBeeld" />
+    <NavigationProperty Name="Kopie2" Relationship="deHerbeeldingModel.FK_MalKopie1" FromRole="MalMatrijs" ToRole="Kopie" />
+  </EntityType>
+  <EntityType Name="Medaille" BaseType="deHerbeeldingModel.DrieDWerken">
+    <Property Name="VrijWerk" Type="Boolean" />
+    <Property Name="Afspraken" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MedailleStamp1" Relationship="deHerbeeldingModel.FK_MedailleMedailleStamp1" FromRole="Medaille" ToRole="MedailleStamp" />
+  </EntityType>
+  <EntityType Name="MedailleStamp">
+    <Key>
+      <PropertyRef Name="StampId" />
+    </Key>
+    <Property Name="StampId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Aantal" Type="Int32" />
+    <Property Name="Nummer" Type="Int32" Nullable="false" />
+    <Property Name="WaarGemaakt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Afmetingen" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Afmetingen1" Relationship="deHerbeeldingModel.FK_StampAfmetingen" FromRole="MedailleStamp" ToRole="Afmetingen" />
+    <Property Name="Medaille1" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Medaille11" Relationship="deHerbeeldingModel.FK_MedailleMedailleStamp1" FromRole="MedailleStamp" ToRole="Medaille" />
+  </EntityType>
+  <EntityType Name="Persoon">
+    <Key>
+      <PropertyRef Name="PersoonId" />
+    </Key>
+    <Property Name="PersoonId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Naam" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gsm" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Telefoon" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Opdrachtgever" Type="Boolean" />
+    <Property Name="Koper" Type="Boolean" />
+    <Property Name="Bronsgieter" Type="Boolean" />
+    <Property Name="Poseerder" Type="Boolean" />
+    <NavigationProperty Name="Dodenmasker" Relationship="deHerbeeldingModel.FK_DodenmaskerContact" FromRole="Persoon" ToRole="Dodenmasker" />
+    <NavigationProperty Name="Kopie" Relationship="deHerbeeldingModel.FK_KopieMaker" FromRole="Persoon" ToRole="Kopie" />
+    <NavigationProperty Name="MalMatrijs" Relationship="deHerbeeldingModel.FK_MalMaker" FromRole="Persoon" ToRole="MalMatrijs" />
+    <NavigationProperty Name="Portret" Relationship="deHerbeeldingModel.FK_PortretPoseerder" FromRole="Persoon" ToRole="Portret" />
+    <NavigationProperty Name="TweeDWerken" Relationship="deHerbeeldingModel.FK_TweeDWerkenOpdrachtgever" FromRole="Persoon" ToRole="TweeDWerken" />
+    <NavigationProperty Name="WassenBeeld" Relationship="deHerbeeldingModel.FK_WassenBeeldMaker" FromRole="Persoon" ToRole="WassenBeeld" />
+    <NavigationProperty Name="GrootFormaat" Relationship="deHerbeeldingModel.FK_GrootKoper" FromRole="Persoon" ToRole="GrootFormaat" />
+    <NavigationProperty Name="Kopie1" Relationship="deHerbeeldingModel.FK_KopieKoper" FromRole="Persoon" ToRole="Kopie" />
+    <NavigationProperty Name="DrieDWerken" Relationship="deHerbeeldingModel.FK_DrieDWerkenWerkplaats1" FromRole="Persoon" ToRole="DrieDWerken" />
+    <NavigationProperty Name="Adres1" Relationship="deHerbeeldingModel.FK_PersoonAdres" FromRole="Persoon" ToRole="Adres" />
+    <NavigationProperty Name="TweeDWerken1" Relationship="deHerbeeldingModel.FK_TweeDWerkenWerkplaats" FromRole="Persoon" ToRole="TweeDWerken" />
+  </EntityType>
+  <EntityType Name="Poezie" BaseType="deHerbeeldingModel.GeschrevenWerken">
+    <Property Name="Opdracht" Type="Boolean" />
+    <Property Name="Tekstkaart" Type="Boolean" />
+    <Property Name="Tekst" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Portret" BaseType="deHerbeeldingModel.DrieDWerken">
+    <Property Name="Poseren" Type="Boolean" />
+    <Property Name="Afspraak" Type="DateTime" Precision="3" />
+    <Property Name="WerkenFotos" Type="Boolean" />
+    <Property Name="FotosMaken" Type="Boolean" />
+    <Property Name="FotosGebracht" Type="Boolean" />
+    <Property Name="CombiFotos" Type="Boolean" />
+    <Property Name="Verwachtingen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DatumOplevering" Type="DateTime" Precision="3" />
+    <Property Name="Poseerder" Type="Int32" />
+    <NavigationProperty Name="Poseerder1" Relationship="deHerbeeldingModel.FK_PortretPoseerder" FromRole="Portret" ToRole="Persoon" />
+  </EntityType>
+  <EntityType Name="Relief" BaseType="deHerbeeldingModel.DrieDWerken" />
+  <EntityType Name="Schilderij" BaseType="deHerbeeldingModel.TweeDWerken" />
+  <EntityType Name="Tekening" BaseType="deHerbeeldingModel.TweeDWerken" />
+  <EntityType Name="Tentoonstelling">
+    <Key>
+      <PropertyRef Name="TentoonstellingId" />
+    </Key>
+    <Property Name="TentoonstellingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BeginDatum" Type="DateTime" Precision="3" />
+    <Property Name="EindDatum" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Kunstwerk" Relationship="deHerbeeldingModel.FK_KunstwerkTentoonstelling" FromRole="Tentoonstelling" ToRole="Kunstwerk" />
+    <NavigationProperty Name="Adres1" Relationship="deHerbeeldingModel.FK_TentoonstellingAdres" FromRole="Tentoonstelling" ToRole="Adres" />
+  </EntityType>
+  <EntityType Name="TweeDWerken" BaseType="deHerbeeldingModel.Kunstwerk">
+    <Property Name="DatumGemaakt" Type="DateTime" Precision="3" />
+    <Property Name="Opdracht" Type="Boolean" />
+    <Property Name="Opdrachtgever" Type="Int32" />
+    <Property Name="CreatieMatDrager" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatieMatGebruikt" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Signatie" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Certifikaat" Type="Boolean" />
+    <Property Name="CertifikaatBezorgd" Type="Boolean" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Opdrachtgever1" Relationship="deHerbeeldingModel.FK_TweeDWerkenOpdrachtgever" FromRole="TweeDWerken" ToRole="Persoon" />
+    <NavigationProperty Name="Kopie" Relationship="deHerbeeldingModel.FK_TweeDWerkenKopie" FromRole="TweeDWerken" ToRole="Kopie" />
+    <Property Name="Werkplaats" Type="Int32" />
+    <NavigationProperty Name="Persoon1" Relationship="deHerbeeldingModel.FK_TweeDWerkenWerkplaats" FromRole="TweeDWerken" ToRole="Persoon" />
+  </EntityType>
+  <EntityType Name="WassenBeeld">
+    <Key>
+      <PropertyRef Name="WassenBeeldId" />
+    </Key>
+    <Property Name="WassenBeeldId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nummer" Type="Int32" Nullable="false" />
+    <Property Name="Maker" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MalMatrijs" Relationship="deHerbeeldingModel.FK_MalWassenBeeld" FromRole="WassenBeeld" ToRole="MalMatrijs" />
+    <NavigationProperty Name="Persoon" Relationship="deHerbeeldingModel.FK_WassenBeeldMaker" FromRole="WassenBeeld" ToRole="Persoon" />
+    <NavigationProperty Name="Kopie2" Relationship="deHerbeeldingModel.FK_WassenBeeldKopie1" FromRole="WassenBeeld" ToRole="Kopie" />
+  </EntityType>
+  <Association Name="FK_StampAfmetingen">
+    <End Type="deHerbeeldingModel.Afmetingen" Role="Afmetingen" Multiplicity="1" />
+    <End Type="deHerbeeldingModel.MedailleStamp" Role="MedailleStamp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Afmetingen">
+        <PropertyRef Name="AfmetingenId" />
+      </Principal>
+      <Dependent Role="MedailleStamp">
+        <PropertyRef Name="Afmetingen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DodenmaskerContact">
+    <End Type="deHerbeeldingModel.Persoon" Role="Persoon" Multiplicity="0..1" />
+    <End Type="deHerbeeldingModel.Dodenmasker" Role="Dodenmasker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="Dodenmasker">
+        <PropertyRef Name="Persoon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrieDWerkenMal">
+    <End Type="deHerbeeldingModel.MalMatrijs" Role="MalMatrijs" Multiplicity="0..1" />
+    <End Type="deHerbeeldingModel.DrieDWerken" Role="DrieDWerken" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MalMatrijs">
+        <PropertyRef Name="MalId" />
+      </Principal>
+      <Dependent Role="DrieDWerken">
+        <PropertyRef Name="MalMatrijs" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KopieMaker">
+    <End Type="deHerbeeldingModel.Persoon" Role="Persoon" Multiplicity="0..1" />
+    <End Type="deHerbeeldingModel.Kopie" Role="Kopie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="Kopie">
+        <PropertyRef Name="Maker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KunstwerkTentoonstelling">
+    <End Type="deHerbeeldingModel.Tentoonstelling" Role="Tentoonstelling" Multiplicity="0..1" />
+    <End Type="deHerbeeldingModel.Kunstwerk" Role="Kunstwerk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tentoonstelling">
+        <PropertyRef Name="TentoonstellingId" />
+      </Principal>
+      <Dependent Role="Kunstwerk">
+        <PropertyRef Name="Tentoonstelling" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MalMaker">
+    <End Type="deHerbeeldingModel.Persoon" Role="Persoon" Multiplicity="0..1" />
+    <End Type="deHerbeeldingModel.MalMatrijs" Role="MalMatrijs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="MalMatrijs">
+        <PropertyRef Name="Maker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MalWassenBeeld">
+    <End Type="deHerbeeldingModel.WassenBeeld" Role="WassenBeeld" Multiplicity="0..1" />
+    <End Type="deHerbeeldingModel.MalMatrijs" Role="MalMatrijs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WassenBeeld">
+        <PropertyRef Name="WassenBeeldId" />
+      </Principal>
+      <Dependent Role="MalMatrijs">
+        <PropertyRef Name="WassenBeeld" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PortretPoseerder">
+    <End Type="deHerbeeldingModel.Persoon" Role="Persoon" Multiplicity="0..1" />
+    <End Type="deHerbeeldingModel.Portret" Role="Portret" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="Portret">
+        <PropertyRef Name="Poseerder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TweeDWerkenOpdrachtgever">
+    <End Type="deHerbeeldingModel.Persoon" Role="Persoon" Multiplicity="0..1" />
+    <End Type="deHerbeeldingModel.TweeDWerken" Role="TweeDWerken" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="TweeDWerken">
+        <PropertyRef Name="Opdrachtgever" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WassenBeeldMaker">
+    <End Type="deHerbeeldingModel.Persoon" Role="Persoon" Multiplicity="1" />
+    <End Type="deHerbeeldingModel.WassenBeeld" Role="WassenBeeld" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="WassenBeeld">
+        <PropertyRef Name="Maker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GrootKoper">
+    <End Type="deHerbeeldingModel.Persoon" Role="Persoon" Multiplicity="0..1" />
+    <End Type="deHerbeeldingModel.GrootFormaat" Role="GrootFormaat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="GrootFormaat">
+        <PropertyRef Name="Koper2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KopieKoper">
+    <End Type="deHerbeeldingModel.Persoon" Role="Persoon" Multiplicity="0..1" />
+    <End Type="deHerbeeldingModel.Kopie" Role="Kopie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="Kopie">
+        <PropertyRef Name="Koper" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrieDWerkenWerkplaats1">
+    <End Type="deHerbeeldingModel.Persoon" Role="Persoon" Multiplicity="0..1" />
+    <End Type="deHerbeeldingModel.DrieDWerken" Role="DrieDWerken" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="DrieDWerken">
+        <PropertyRef Name="Werkplaats" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KunstwerkAfmetingen1">
+    <End Type="deHerbeeldingModel.Kunstwerk" Role="Kunstwerk" Multiplicity="1" />
+    <End Type="deHerbeeldingModel.Afmetingen" Role="Afmetingen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kunstwerk">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="Afmetingen">
+        <PropertyRef Name="Kunstwerk1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MedailleMedailleStamp1">
+    <End Type="deHerbeeldingModel.Medaille" Role="Medaille" Multiplicity="1" />
+    <End Type="deHerbeeldingModel.MedailleStamp" Role="MedailleStamp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medaille">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="MedailleStamp">
+        <PropertyRef Name="Medaille1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TweeDWerkenKopie">
+    <End Type="deHerbeeldingModel.TweeDWerken" Role="TweeDWerken" Multiplicity="0..1" />
+    <End Type="deHerbeeldingModel.Kopie" Role="Kopie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TweeDWerken">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="Kopie">
+        <PropertyRef Name="TweeDWerk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WassenBeeldKopie1">
+    <End Type="deHerbeeldingModel.WassenBeeld" Role="WassenBeeld" Multiplicity="0..1" />
+    <End Type="deHerbeeldingModel.Kopie" Role="Kopie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WassenBeeld">
+        <PropertyRef Name="WassenBeeldId" />
+      </Principal>
+      <Dependent Role="Kopie">
+        <PropertyRef Name="WassenBeeld1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MalKopie1">
+    <End Type="deHerbeeldingModel.MalMatrijs" Role="MalMatrijs" Multiplicity="0..1" />
+    <End Type="deHerbeeldingModel.Kopie" Role="Kopie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MalMatrijs">
+        <PropertyRef Name="MalId" />
+      </Principal>
+      <Dependent Role="Kopie">
+        <PropertyRef Name="MalMatrijs1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Beeld" BaseType="deHerbeeldingModel.DrieDWerken">
+    <Property Name="Kleischets" Type="Int32" />
+    <NavigationProperty Name="Kleischets1" Relationship="deHerbeeldingModel.FK_BeeldKleischets" FromRole="Beeld" ToRole="Kleischets" />
+  </EntityType>
+  <EntityType Name="Kleischets" BaseType="deHerbeeldingModel.DrieDWerken">
+    <NavigationProperty Name="Beeld" Relationship="deHerbeeldingModel.FK_BeeldKleischets" FromRole="Kleischets" ToRole="Beeld" />
+  </EntityType>
+  <Association Name="FK_BeeldKleischets">
+    <End Type="deHerbeeldingModel.Kleischets" Role="Kleischets" Multiplicity="0..1" />
+    <End Type="deHerbeeldingModel.Beeld" Role="Beeld" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kleischets">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="Beeld">
+        <PropertyRef Name="Kleischets" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Adres">
+    <Key>
+      <PropertyRef Name="AdresId" />
+    </Key>
+    <Property Name="AdresId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Straat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="HuisNr" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Postcode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Gemeente" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Land" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Persoon" Relationship="deHerbeeldingModel.FK_PersoonAdres" FromRole="Adres" ToRole="Persoon" />
+    <NavigationProperty Name="Tentoonstelling" Relationship="deHerbeeldingModel.FK_TentoonstellingAdres" FromRole="Adres" ToRole="Tentoonstelling" />
+  </EntityType>
+  <Association Name="FK_PersoonAdres">
+    <End Type="deHerbeeldingModel.Persoon" Role="Persoon" Multiplicity="1" />
+    <End Type="deHerbeeldingModel.Adres" Role="Adres" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="Adres">
+        <PropertyRef Name="AdresId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TentoonstellingAdres">
+    <End Type="deHerbeeldingModel.Tentoonstelling" Role="Tentoonstelling" Multiplicity="1" />
+    <End Type="deHerbeeldingModel.Adres" Role="Adres" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Tentoonstelling">
+        <PropertyRef Name="TentoonstellingId" />
+      </Principal>
+      <Dependent Role="Adres">
+        <PropertyRef Name="AdresId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TweeDWerkenWerkplaats">
+    <End Type="deHerbeeldingModel.Persoon" Role="Persoon" Multiplicity="0..1" />
+    <End Type="deHerbeeldingModel.TweeDWerken" Role="TweeDWerken" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="TweeDWerken">
+        <PropertyRef Name="Werkplaats" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CursusAdmin">
+    <Key>
+      <PropertyRef Name="CursusId" />
+    </Key>
+    <Property Name="CursusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CursusNaam" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CursusInfo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CursusInschrijvingAdmin" Relationship="deHerbeeldingModel.FK_CursusInschrijvingAdmin" FromRole="CursusAdmin" ToRole="CursusInschrijvingAdmin" />
+  </EntityType>
+  <EntityType Name="CursusAfgietenAdmin" BaseType="deHerbeeldingModel.CursusAdmin" />
+  <EntityType Name="CursusBronsgieterAdmin" BaseType="deHerbeeldingModel.CursusAdmin" />
+  <EntityType Name="CursusInschrijvingAdmin">
+    <Key>
+      <PropertyRef Name="CursusInschrijvingId" />
+    </Key>
+    <Property Name="CursusInschrijvingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VoorNaam" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="AchterNaam" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TelefoonGsm" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Cursus" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CursusAdmin" Relationship="deHerbeeldingModel.FK_CursusInschrijvingAdmin" FromRole="CursusInschrijvingAdmin" ToRole="CursusAdmin" />
+    <NavigationProperty Name="EventCursusAdmin" Relationship="deHerbeeldingModel.FK_CursusInschrijvingEventAdmin" FromRole="CursusInschrijvingAdmin" ToRole="EventCursusAdmin" />
+  </EntityType>
+  <EntityType Name="EventCursusAdmin">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="Int32" Nullable="false" />
+    <Property Name="Text" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BeginEvent" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndEvent" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CursusInschrijving" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CursusInschrijvingAdmin" Relationship="deHerbeeldingModel.FK_CursusInschrijvingEventAdmin" FromRole="EventCursusAdmin" ToRole="CursusInschrijvingAdmin" />
+  </EntityType>
+  <Association Name="FK_CursusInschrijvingAdmin">
+    <End Type="deHerbeeldingModel.CursusAdmin" Role="CursusAdmin" Multiplicity="1" />
+    <End Type="deHerbeeldingModel.CursusInschrijvingAdmin" Role="CursusInschrijvingAdmin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CursusAdmin">
+        <PropertyRef Name="CursusId" />
+      </Principal>
+      <Dependent Role="CursusInschrijvingAdmin">
+        <PropertyRef Name="Cursus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CursusInschrijvingEventAdmin">
+    <End Type="deHerbeeldingModel.CursusInschrijvingAdmin" Role="CursusInschrijvingAdmin" Multiplicity="1" />
+    <End Type="deHerbeeldingModel.EventCursusAdmin" Role="EventCursusAdmin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CursusInschrijvingAdmin">
+        <PropertyRef Name="CursusInschrijvingId" />
+      </Principal>
+      <Dependent Role="EventCursusAdmin">
+        <PropertyRef Name="CursusInschrijving" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

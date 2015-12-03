@@ -1,0 +1,32 @@
+﻿
+@model IEnumerable<Kunst.Models.Kunstwerk>
+
+@{
+    Layout = null;
+}
+
+<h2>@Resources.Resources.Artefact</h2>
+@Html.ValidationSummary(true)
+<table class="table">
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.Titel)
+        </td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titel)
+            </td>
+
+
+            <td>
+                @Ajax.ActionLink(@Resources.Resources.Details, "KunstwerkDetails", new { id = item.KunstwerkId }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace }, new { style = "color:#ffd800" })
+            </td>
+        </tr>
+    }
+
+</table>
+

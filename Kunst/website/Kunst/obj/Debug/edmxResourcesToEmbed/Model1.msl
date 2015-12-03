@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="deHerbeeldingModelStoreContainer" CdmEntityContainer="deHerbeeldingEntities1">
+    <EntitySetMapping Name="Kunstwerk">
+      <EntityTypeMapping TypeName="deHerbeeldingModel.Kunstwerk">
+        <MappingFragment StoreEntitySet="Kunstwerk">
+          <ScalarProperty Name="KunstwerkId" ColumnName="KunstwerkId" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Titel" ColumnName="Titel" />
+          <ScalarProperty Name="BeschrijvingNL" ColumnName="BeschrijvingNL" />
+          <ScalarProperty Name="BeschrijvingEN" ColumnName="BeschrijvingEN" />
+          <ScalarProperty Name="BeschrijvingFR" ColumnName="BeschrijvingFR" />
+          <ScalarProperty Name="BeschrijvingDE" ColumnName="BeschrijvingDE" />
+          <ScalarProperty Name="Speech" ColumnName="Speech" />
+          <ScalarProperty Name="Folder" ColumnName="Folder" />
+          <ScalarProperty Name="Pers" ColumnName="Pers" />
+          <ScalarProperty Name="Tentoongesteld" ColumnName="Tentoongesteld" />
+          <ScalarProperty Name="Tentoonstelling" ColumnName="Tentoonstelling" />
+          <ScalarProperty Name="Koper" ColumnName="Koper" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="deHerbeeldingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Kunstwerk">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="KunstwerkId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Categorie" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Titel" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="BeschrijvingNL" Type="nvarchar" MaxLength="100" />
+    <Property Name="BeschrijvingEN" Type="nvarchar" MaxLength="100" />
+    <Property Name="BeschrijvingFR" Type="nvarchar" MaxLength="100" />
+    <Property Name="BeschrijvingDE" Type="nvarchar" MaxLength="100" />
+    <Property Name="Speech" Type="nvarchar" MaxLength="100" />
+    <Property Name="Folder" Type="nvarchar" MaxLength="100" />
+    <Property Name="Pers" Type="nvarchar" MaxLength="100" />
+    <Property Name="Tentoongesteld" Type="bit" />
+    <Property Name="Tentoonstelling" Type="int" />
+    <Property Name="Koper" Type="int" />
+    <Property Name="Website" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="deHerbeeldingModelStoreContainer">
+    <EntitySet Name="Kunstwerk" EntityType="Self.Kunstwerk" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

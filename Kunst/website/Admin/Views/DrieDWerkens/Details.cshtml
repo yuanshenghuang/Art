@@ -1,0 +1,98 @@
+﻿@model Admin.Models.DrieDWerken
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DrieDWerken</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Categorie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categorie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titel)
+        </dd>       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BeschrijvingNL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BeschrijvingNL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BeschrijvingEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BeschrijvingEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BeschrijvingFR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BeschrijvingFR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BeschrijvingDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BeschrijvingDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatieMat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatieMat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UitvoeringsMat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UitvoeringsMat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto)
+        </dt>
+
+        <dd>
+            <img src="@Url.Action("GetImage", "Images", new { imageName = Model.Foto })" alt="" width="500" height="400" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.KunstwerkId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

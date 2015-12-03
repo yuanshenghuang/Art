@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KunstdbModelStoreContainer" CdmEntityContainer="KunstdbEntities">
+    <EntitySetMapping Name="Afmetingens">
+      <EntityTypeMapping TypeName="KunstdbModel.Afmetingens">
+        <MappingFragment StoreEntitySet="Afmetingens">
+          <ScalarProperty Name="AfmetingenId" ColumnName="AfmetingenId" />
+          <ScalarProperty Name="Hoogte" ColumnName="Hoogte" />
+          <ScalarProperty Name="Breedte" ColumnName="Breedte" />
+          <ScalarProperty Name="Diepte" ColumnName="Diepte" />
+          <ScalarProperty Name="Diameter" ColumnName="Diameter" />
+          <ScalarProperty Name="Kunstwerk1" ColumnName="Kunstwerk1" />
+          <ScalarProperty Name="Kunstwerk11_KunstwerkId" ColumnName="Kunstwerk11_KunstwerkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kunstwerks">
+      <EntityTypeMapping TypeName="IsTypeOf(KunstdbModel.Kunstwerks)">
+        <MappingFragment StoreEntitySet="Kunstwerks">
+          <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Tentoonstelling" ColumnName="Tentoonstelling" />
+          <ScalarProperty Name="Tentoongesteld" ColumnName="Tentoongesteld" />
+          <ScalarProperty Name="Pers" ColumnName="Pers" />
+          <ScalarProperty Name="Folder" ColumnName="Folder" />
+          <ScalarProperty Name="Speech" ColumnName="Speech" />
+          <ScalarProperty Name="BeschrijvingDE" ColumnName="BeschrijvingDE" />
+          <ScalarProperty Name="BeschrijvingFR" ColumnName="BeschrijvingFR" />
+          <ScalarProperty Name="BeschrijvingEN" ColumnName="BeschrijvingEN" />
+          <ScalarProperty Name="BeschrijvingNL" ColumnName="BeschrijvingNL" />
+          <ScalarProperty Name="Afmetingen" ColumnName="Afmetingen" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="Titel" ColumnName="Titel" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Address" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="Book" xml:space="preserve">
+    <value>Livre</value>
+  </data>
+  <data name="ClayDrawing" xml:space="preserve">
+    <value>Terre Ecrire</value>
+  </data>
+  <data name="Collage" xml:space="preserve">
+    <value>Collage</value>
+  </data>
+  <data name="COURSE" xml:space="preserve">
+    <value>COURS</value>
+  </data>
+  <data name="DeathMask" xml:space="preserve">
+    <value>Masque mortuaire</value>
+  </data>
+  <data name="DescriptionSculpture" xml:space="preserve">
+    <value>Description Sculpture</value>
+  </data>
+  <data name="Drawing" xml:space="preserve">
+    <value>Dessin</value>
+  </data>
+  <data name="Freedom" xml:space="preserve">
+    <value>Liberté</value>
+  </data>
+  <data name="Imagery" xml:space="preserve">
+    <value>La Recréation</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Déconnecter</value>
+  </data>
+  <data name="LogOn" xml:space="preserve">
+    <value>Connecter</value>
+  </data>
+  <data name="Medal" xml:space="preserve">
+    <value>Médaille</value>
+  </data>
+  <data name="Painting" xml:space="preserve">
+    <value>Peinture</value>
+  </data>
+  <data name="Poetry" xml:space="preserve">
+    <value>Poésie</value>
+  </data>
+  <data name="Portrait" xml:space="preserve">
+    <value>Portrait</value>
+  </data>
+  <data name="Projects" xml:space="preserve">
+    <value>Projets</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Enregister</value>
+  </data>
+  <data name="Relief" xml:space="preserve">
+    <value>Relief</value>
+  </data>
+  <data name="Sculpture" xml:space="preserve">
+    <value>Sculpture</value>
+  </data>
+  <data name="Sculptures" xml:space="preserve">
+    <value>sculptures</value>
+  </data>
+  <data name="Speech" xml:space="preserve">
+    <value>Discours</value>
+  </data>
+  <data name="Telephone" xml:space="preserve">
+    <value>Téléphone</value>
+  </data>
+  <data name="Tomb" xml:space="preserve">
+    <value>Tombeau</value>
+  </data>
+  <data name="TwoDWorks" xml:space="preserve">
+    <value>2 D travail</value>
+  </data>
+  <data name="Vipa" xml:space="preserve">
+    <value>Vipa</value>
+  </data>
+  <data name="WRITTENWORKS" xml:space="preserve">
+    <value>ECRITURE</value>
+  </data>
+  <data name="Calendar" xml:space="preserve">
+    <value>Cliquez ici pour ouvrir le calendrier</value>
+  </data>
+  <data name="CursusInschrijving" xml:space="preserve">
+    <value>L'inscription aux cours</value>
+  </data>
+  <data name="Artefact" xml:space="preserve">
+    <value>Oeuvre d'art</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Retour</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Détails</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Titre</value>
+  </data>
+  <data name="ThreeDWorks" xml:space="preserve">
+    <value>3 D travail</value>
+  </data>
+  <data name="VoorNaam" xml:space="preserve">
+    <value>Prénom</value>
+  </data>
+  <data name="AvailableTime" xml:space="preserve">
+    <value>Time Disponible</value>
+  </data>
+  <data name="Beschrijving" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Breedte" xml:space="preserve">
+    <value>Largeur</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Créer</value>
+  </data>
+  <data name="Creatiemateriaal" xml:space="preserve">
+    <value>Matériau de création</value>
+  </data>
+  <data name="CursusInfo" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="CursusNaam" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="Diameter" xml:space="preserve">
+    <value>Diamètre</value>
+  </data>
+  <data name="Diepte" xml:space="preserve">
+    <value>Profondeur</value>
+  </data>
+  <data name="Hoogte" xml:space="preserve">
+    <value>Hauteur</value>
+  </data>
+  <data name="Inschrijven" xml:space="preserve">
+    <value>Enregistrer</value>
+  </data>
+  <data name="Jaar" xml:space="preserve">
+    <value>An</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Numéro de téléphone</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Indiquez quand vous avez le temps</value>
+  </data>
+  <data name="Uitvoeringsmateriaal" xml:space="preserve">
+    <value>La mise en œuvre Matériel</value>
+  </data>
+  <data name="UwInschrijving" xml:space="preserve">
+    <value>Votre Inscription</value>
+  </data>
+</root>

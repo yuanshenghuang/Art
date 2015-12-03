@@ -1,0 +1,1021 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="deHerbeeldingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Adres">
+    <Key>
+      <PropertyRef Name="AdresId" />
+    </Key>
+    <Property Name="AdresId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Straat" Type="nvarchar" MaxLength="100" />
+    <Property Name="HuisNr" Type="nvarchar" MaxLength="10" />
+    <Property Name="Postcode" Type="nvarchar" MaxLength="10" />
+    <Property Name="Gemeente" Type="nvarchar" MaxLength="100" />
+    <Property Name="Land" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Afmetingen">
+    <Key>
+      <PropertyRef Name="AfmetingenId" />
+    </Key>
+    <Property Name="AfmetingenId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hoogte" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Breedte" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Diepte" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Diameter" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Kunstwerk" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Beeld">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="Kleischets" Type="int" />
+    <Property Name="KunstwerkId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Boek">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="Thema" Type="nvarchar" MaxLength="100" />
+    <Property Name="KorteInhoud" Type="nvarchar(max)" />
+    <Property Name="Uitgever" Type="nvarchar" MaxLength="100" />
+    <Property Name="Oplage" Type="nvarchar" MaxLength="100" />
+    <Property Name="KunstwerkId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Collage">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="KunstwerkId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CursusAdmin">
+    <Key>
+      <PropertyRef Name="CursusId" />
+    </Key>
+    <Property Name="CursusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CursusNaam" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CursusInfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CursusAfgietenAdmin">
+    <Key>
+      <PropertyRef Name="CursusId" />
+    </Key>
+    <Property Name="CursusId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CursusBronsgieterAdmin">
+    <Key>
+      <PropertyRef Name="CursusId" />
+    </Key>
+    <Property Name="CursusId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CursusInschrijvingAdmin">
+    <Key>
+      <PropertyRef Name="CursusInschrijvingId" />
+    </Key>
+    <Property Name="CursusInschrijvingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VoorNaam" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AchterNaam" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="TelefoonGsm" Type="nvarchar" MaxLength="20" />
+    <Property Name="Cursus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dodenmasker">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="GeboorteDatum" Type="datetime" />
+    <Property Name="GeboortePlaats" Type="nvarchar" MaxLength="100" />
+    <Property Name="OverlijdensDatum" Type="datetime" />
+    <Property Name="OverlijdensPlaats" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContactName" Type="datetime" />
+    <Property Name="Presentatie" Type="nvarchar(max)" />
+    <Property Name="DatumGegoten" Type="datetime" />
+    <Property Name="WaarGegoten" Type="nvarchar(max)" />
+    <Property Name="Persoon" Type="int" />
+    <Property Name="KunstwerkId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DrieDWerken">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="CreatieMat" Type="nvarchar" MaxLength="100" />
+    <Property Name="UitvoeringsMat" Type="nvarchar" MaxLength="100" />
+    <Property Name="Signatie" Type="nvarchar" MaxLength="50" />
+    <Property Name="Werkplaats" Type="int" />
+    <Property Name="MalMatrijs" Type="int" />
+    <Property Name="KunstwerkId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EventCursusAdmin">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="int" Nullable="false" />
+    <Property Name="Text" Type="nvarchar" MaxLength="100" />
+    <Property Name="BeginEvent" Type="datetime" Nullable="false" />
+    <Property Name="EndEvent" Type="datetime" Nullable="false" />
+    <Property Name="CursusInschrijving" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GeschrevenWerken">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="KunstwerkId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GrootFormaat">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="Koper" Type="int" />
+    <Property Name="KunstwerkId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kleischets">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="KunstwerkId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kopie">
+    <Key>
+      <PropertyRef Name="KopieId" />
+    </Key>
+    <Property Name="KopieId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Besteld" Type="bit" />
+    <Property Name="Kleur" Type="nvarchar" MaxLength="50" />
+    <Property Name="DatumBesteld" Type="datetime" />
+    <Property Name="DatumOpgehaald" Type="datetime" />
+    <Property Name="Verkocht" Type="bit" />
+    <Property Name="Certifikaat" Type="bit" />
+    <Property Name="CertifikaatBezorgd" Type="bit" />
+    <Property Name="KopieNr" Type="int" />
+    <Property Name="GietPrijs" Type="int" />
+    <Property Name="VerkoopPrijs" Type="int" />
+    <Property Name="Prijs" Type="float" />
+    <Property Name="Maker" Type="int" />
+    <Property Name="Koper" Type="int" />
+    <Property Name="TweeDWerk" Type="int" />
+    <Property Name="WassenBeeld" Type="int" />
+    <Property Name="MalMatrijs" Type="int" />
+  </EntityType>
+  <EntityType Name="Kunstwerk">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="KunstwerkId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Categorie" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Titel" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Foto" Type="nvarchar" MaxLength="100" />
+    <Property Name="Afmetingen" Type="int" />
+    <Property Name="BeschrijvingNL" Type="nvarchar" MaxLength="100" />
+    <Property Name="BeschrijvingEN" Type="nvarchar" MaxLength="100" />
+    <Property Name="BeschrijvingFR" Type="nvarchar" MaxLength="100" />
+    <Property Name="BeschrijvingDE" Type="nvarchar" MaxLength="100" />
+    <Property Name="Speech" Type="nvarchar" MaxLength="100" />
+    <Property Name="Folder" Type="nvarchar" MaxLength="100" />
+    <Property Name="Pers" Type="nvarchar" MaxLength="100" />
+    <Property Name="Tentoongesteld" Type="bit" />
+    <Property Name="Tentoonstelling" Type="int" />
+    <Property Name="Website" Type="bit" />
+  </EntityType>
+  <EntityType Name="MalMatrijs">
+    <Key>
+      <PropertyRef Name="MalId" />
+    </Key>
+    <Property Name="MalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Materiaal" Type="nvarchar" MaxLength="100" />
+    <Property Name="DatumGemaakt" Type="datetime" />
+    <Property Name="Hoeveelheden" Type="nvarchar(max)" />
+    <Property Name="Prijs" Type="float" />
+    <Property Name="Staat" Type="nvarchar" MaxLength="100" />
+    <Property Name="WassenBeeld" Type="int" />
+    <Property Name="Maker" Type="int" />
+  </EntityType>
+  <EntityType Name="Medaille">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="VrijWerk" Type="bit" />
+    <Property Name="Afspraken" Type="nvarchar(max)" />
+    <Property Name="KunstwerkId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MedailleStamp">
+    <Key>
+      <PropertyRef Name="StampId" />
+    </Key>
+    <Property Name="StampId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Aantal" Type="int" />
+    <Property Name="Nummer" Type="int" Nullable="false" />
+    <Property Name="WaarGemaakt" Type="nvarchar(max)" />
+    <Property Name="Afmetingen" Type="int" Nullable="false" />
+    <Property Name="Medaille" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Persoon">
+    <Key>
+      <PropertyRef Name="PersoonId" />
+    </Key>
+    <Property Name="PersoonId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Naam" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gsm" Type="nvarchar" MaxLength="20" />
+    <Property Name="Telefoon" Type="nvarchar" MaxLength="20" />
+    <Property Name="Opdrachtgever" Type="bit" />
+    <Property Name="Koper" Type="bit" />
+    <Property Name="Bronsgieter" Type="bit" />
+    <Property Name="Poseerder" Type="bit" />
+  </EntityType>
+  <EntityType Name="Poezie">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="Opdracht" Type="bit" />
+    <Property Name="Tekstkaart" Type="bit" />
+    <Property Name="Tekst" Type="nvarchar(max)" />
+    <Property Name="KunstwerkId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Portret">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="Poseren" Type="bit" />
+    <Property Name="Afspraak" Type="datetime" />
+    <Property Name="WerkenFotos" Type="bit" />
+    <Property Name="FotosMaken" Type="bit" />
+    <Property Name="FotosGebracht" Type="bit" />
+    <Property Name="CombiFotos" Type="bit" />
+    <Property Name="Verwachtingen" Type="nvarchar(max)" />
+    <Property Name="DatumOplevering" Type="datetime" />
+    <Property Name="Poseerder" Type="int" />
+    <Property Name="KunstwerkId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Relief">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="KunstwerkId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Schilderij">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="KunstwerkId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tekening">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="KunstwerkId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tentoonstelling">
+    <Key>
+      <PropertyRef Name="TentoonstellingId" />
+    </Key>
+    <Property Name="TentoonstellingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BeginDatum" Type="datetime" />
+    <Property Name="EindDatum" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TweeDWerken">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="DatumGemaakt" Type="datetime" />
+    <Property Name="Opdracht" Type="bit" />
+    <Property Name="Opdrachtgever" Type="int" />
+    <Property Name="CreatieMatDrager" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatieMatGebruikt" Type="nvarchar" MaxLength="100" />
+    <Property Name="Signatie" Type="nvarchar" MaxLength="100" />
+    <Property Name="Certifikaat" Type="bit" />
+    <Property Name="CertifikaatBezorgd" Type="bit" />
+    <Property Name="Code" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Werkplaats" Type="int" />
+    <Property Name="KunstwerkId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WassenBeeld">
+    <Key>
+      <PropertyRef Name="WassenBeeldId" />
+    </Key>
+    <Property Name="WassenBeeldId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nummer" Type="int" Nullable="false" />
+    <Property Name="Maker" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Beeld_inherits_DrieDWerken">
+    <End Role="DrieDWerken" Type="Self.DrieDWerken" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Beeld" Type="Self.Beeld" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DrieDWerken">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="Beeld">
+        <PropertyRef Name="KunstwerkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BeeldKleischets">
+    <End Role="Kleischets" Type="Self.Kleischets" Multiplicity="0..1" />
+    <End Role="Beeld" Type="Self.Beeld" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kleischets">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="Beeld">
+        <PropertyRef Name="Kleischets" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Boek_inherits_GeschrevenWerken">
+    <End Role="GeschrevenWerken" Type="Self.GeschrevenWerken" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Boek" Type="Self.Boek" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="GeschrevenWerken">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="Boek">
+        <PropertyRef Name="KunstwerkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Collage_inherits_TweeDWerken">
+    <End Role="TweeDWerken" Type="Self.TweeDWerken" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Collage" Type="Self.Collage" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TweeDWerken">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="Collage">
+        <PropertyRef Name="KunstwerkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CursusAfgietenAdmin_inherits_Cursus">
+    <End Role="CursusAdmin" Type="Self.CursusAdmin" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CursusAfgietenAdmin" Type="Self.CursusAfgietenAdmin" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="CursusAdmin">
+        <PropertyRef Name="CursusId" />
+      </Principal>
+      <Dependent Role="CursusAfgietenAdmin">
+        <PropertyRef Name="CursusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CursusBronsgieterAdmin_inherits_Cursus">
+    <End Role="CursusAdmin" Type="Self.CursusAdmin" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CursusBronsgieterAdmin" Type="Self.CursusBronsgieterAdmin" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="CursusAdmin">
+        <PropertyRef Name="CursusId" />
+      </Principal>
+      <Dependent Role="CursusBronsgieterAdmin">
+        <PropertyRef Name="CursusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CursusInschrijvingAdmin">
+    <End Role="CursusAdmin" Type="Self.CursusAdmin" Multiplicity="1" />
+    <End Role="CursusInschrijvingAdmin" Type="Self.CursusInschrijvingAdmin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CursusAdmin">
+        <PropertyRef Name="CursusId" />
+      </Principal>
+      <Dependent Role="CursusInschrijvingAdmin">
+        <PropertyRef Name="Cursus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CursusInschrijvingEventAdmin">
+    <End Role="CursusInschrijvingAdmin" Type="Self.CursusInschrijvingAdmin" Multiplicity="1" />
+    <End Role="EventCursusAdmin" Type="Self.EventCursusAdmin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CursusInschrijvingAdmin">
+        <PropertyRef Name="CursusInschrijvingId" />
+      </Principal>
+      <Dependent Role="EventCursusAdmin">
+        <PropertyRef Name="CursusInschrijving" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dodenmasker_inherits_DrieDWerken">
+    <End Role="DrieDWerken" Type="Self.DrieDWerken" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Dodenmasker" Type="Self.Dodenmasker" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DrieDWerken">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="Dodenmasker">
+        <PropertyRef Name="KunstwerkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DodenmaskerContact">
+    <End Role="Persoon" Type="Self.Persoon" Multiplicity="0..1" />
+    <End Role="Dodenmasker" Type="Self.Dodenmasker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="Dodenmasker">
+        <PropertyRef Name="Persoon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrieDWerken_inherits_Kunstwerk">
+    <End Role="Kunstwerk" Type="Self.Kunstwerk" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DrieDWerken" Type="Self.DrieDWerken" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Kunstwerk">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="DrieDWerken">
+        <PropertyRef Name="KunstwerkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrieDWerkenMal">
+    <End Role="MalMatrijs" Type="Self.MalMatrijs" Multiplicity="0..1" />
+    <End Role="DrieDWerken" Type="Self.DrieDWerken" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MalMatrijs">
+        <PropertyRef Name="MalId" />
+      </Principal>
+      <Dependent Role="DrieDWerken">
+        <PropertyRef Name="MalMatrijs" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrieDWerkenWerkplaats">
+    <End Role="Persoon" Type="Self.Persoon" Multiplicity="0..1" />
+    <End Role="DrieDWerken" Type="Self.DrieDWerken" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="DrieDWerken">
+        <PropertyRef Name="Werkplaats" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GeschrevenWerken_inherits_Kunstwerk">
+    <End Role="Kunstwerk" Type="Self.Kunstwerk" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GeschrevenWerken" Type="Self.GeschrevenWerken" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Kunstwerk">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="GeschrevenWerken">
+        <PropertyRef Name="KunstwerkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GrootFormaat_inherits_GeschrevenWerken">
+    <End Role="GeschrevenWerken" Type="Self.GeschrevenWerken" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GrootFormaat" Type="Self.GrootFormaat" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="GeschrevenWerken">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="GrootFormaat">
+        <PropertyRef Name="KunstwerkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GrootKoper">
+    <End Role="Persoon" Type="Self.Persoon" Multiplicity="0..1" />
+    <End Role="GrootFormaat" Type="Self.GrootFormaat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="GrootFormaat">
+        <PropertyRef Name="Koper" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kleischets_inherits_DrieDWerken">
+    <End Role="DrieDWerken" Type="Self.DrieDWerken" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Kleischets" Type="Self.Kleischets" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DrieDWerken">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="Kleischets">
+        <PropertyRef Name="KunstwerkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KopieKoper">
+    <End Role="Persoon" Type="Self.Persoon" Multiplicity="0..1" />
+    <End Role="Kopie" Type="Self.Kopie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="Kopie">
+        <PropertyRef Name="Koper" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KopieMaker">
+    <End Role="Persoon" Type="Self.Persoon" Multiplicity="0..1" />
+    <End Role="Kopie" Type="Self.Kopie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="Kopie">
+        <PropertyRef Name="Maker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KunstwerkAfmetingen">
+    <End Role="Kunstwerk" Type="Self.Kunstwerk" Multiplicity="1" />
+    <End Role="Afmetingen" Type="Self.Afmetingen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kunstwerk">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="Afmetingen">
+        <PropertyRef Name="Kunstwerk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KunstwerkTentoonstelling">
+    <End Role="Tentoonstelling" Type="Self.Tentoonstelling" Multiplicity="0..1" />
+    <End Role="Kunstwerk" Type="Self.Kunstwerk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tentoonstelling">
+        <PropertyRef Name="TentoonstellingId" />
+      </Principal>
+      <Dependent Role="Kunstwerk">
+        <PropertyRef Name="Tentoonstelling" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MalKopie">
+    <End Role="MalMatrijs" Type="Self.MalMatrijs" Multiplicity="0..1" />
+    <End Role="Kopie" Type="Self.Kopie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MalMatrijs">
+        <PropertyRef Name="MalId" />
+      </Principal>
+      <Dependent Role="Kopie">
+        <PropertyRef Name="MalMatrijs" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MalMaker">
+    <End Role="Persoon" Type="Self.Persoon" Multiplicity="0..1" />
+    <End Role="MalMatrijs" Type="Self.MalMatrijs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="MalMatrijs">
+        <PropertyRef Name="Maker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MalWassenBeeld">
+    <End Role="WassenBeeld" Type="Self.WassenBeeld" Multiplicity="0..1" />
+    <End Role="MalMatrijs" Type="Self.MalMatrijs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WassenBeeld">
+        <PropertyRef Name="WassenBeeldId" />
+      </Principal>
+      <Dependent Role="MalMatrijs">
+        <PropertyRef Name="WassenBeeld" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Medaille_inherits_DrieDWerken">
+    <End Role="DrieDWerken" Type="Self.DrieDWerken" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Medaille" Type="Self.Medaille" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DrieDWerken">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="Medaille">
+        <PropertyRef Name="KunstwerkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MedailleMedailleStamp">
+    <End Role="Medaille" Type="Self.Medaille" Multiplicity="1" />
+    <End Role="MedailleStamp" Type="Self.MedailleStamp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medaille">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="MedailleStamp">
+        <PropertyRef Name="Medaille" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersoonAdres">
+    <End Role="Persoon" Type="Self.Persoon" Multiplicity="1" />
+    <End Role="Adres" Type="Self.Adres" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="Adres">
+        <PropertyRef Name="AdresId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Poezie_inherits_GeschrevenWerken">
+    <End Role="GeschrevenWerken" Type="Self.GeschrevenWerken" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Poezie" Type="Self.Poezie" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="GeschrevenWerken">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="Poezie">
+        <PropertyRef Name="KunstwerkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Portret_inherits_DrieDWerken">
+    <End Role="DrieDWerken" Type="Self.DrieDWerken" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Portret" Type="Self.Portret" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DrieDWerken">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="Portret">
+        <PropertyRef Name="KunstwerkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PortretPoseerder">
+    <End Role="Persoon" Type="Self.Persoon" Multiplicity="0..1" />
+    <End Role="Portret" Type="Self.Portret" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="Portret">
+        <PropertyRef Name="Poseerder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Relief_inherits_DrieDWerken">
+    <End Role="DrieDWerken" Type="Self.DrieDWerken" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Relief" Type="Self.Relief" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DrieDWerken">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="Relief">
+        <PropertyRef Name="KunstwerkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Schilderij_inherits_TweeDWerken">
+    <End Role="TweeDWerken" Type="Self.TweeDWerken" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Schilderij" Type="Self.Schilderij" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TweeDWerken">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="Schilderij">
+        <PropertyRef Name="KunstwerkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StampAfmetingen">
+    <End Role="Afmetingen" Type="Self.Afmetingen" Multiplicity="1" />
+    <End Role="MedailleStamp" Type="Self.MedailleStamp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Afmetingen">
+        <PropertyRef Name="AfmetingenId" />
+      </Principal>
+      <Dependent Role="MedailleStamp">
+        <PropertyRef Name="Afmetingen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tekening_inherits_TweeDWerken">
+    <End Role="TweeDWerken" Type="Self.TweeDWerken" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Tekening" Type="Self.Tekening" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TweeDWerken">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="Tekening">
+        <PropertyRef Name="KunstwerkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TentoonstellingAdres">
+    <End Role="Tentoonstelling" Type="Self.Tentoonstelling" Multiplicity="1" />
+    <End Role="Adres" Type="Self.Adres" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Tentoonstelling">
+        <PropertyRef Name="TentoonstellingId" />
+      </Principal>
+      <Dependent Role="Adres">
+        <PropertyRef Name="AdresId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TweeDWerken_inherits_Kunstwerk">
+    <End Role="Kunstwerk" Type="Self.Kunstwerk" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TweeDWerken" Type="Self.TweeDWerken" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Kunstwerk">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="TweeDWerken">
+        <PropertyRef Name="KunstwerkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TweeDWerkenKopie">
+    <End Role="TweeDWerken" Type="Self.TweeDWerken" Multiplicity="0..1" />
+    <End Role="Kopie" Type="Self.Kopie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TweeDWerken">
+        <PropertyRef Name="KunstwerkId" />
+      </Principal>
+      <Dependent Role="Kopie">
+        <PropertyRef Name="TweeDWerk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TweeDWerkenOpdrachtgever">
+    <End Role="Persoon" Type="Self.Persoon" Multiplicity="0..1" />
+    <End Role="TweeDWerken" Type="Self.TweeDWerken" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="TweeDWerken">
+        <PropertyRef Name="Opdrachtgever" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TweeDWerkenWerkplaats">
+    <End Role="Persoon" Type="Self.Persoon" Multiplicity="0..1" />
+    <End Role="TweeDWerken" Type="Self.TweeDWerken" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="TweeDWerken">
+        <PropertyRef Name="Werkplaats" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WassenBeeldKopie">
+    <End Role="WassenBeeld" Type="Self.WassenBeeld" Multiplicity="0..1" />
+    <End Role="Kopie" Type="Self.Kopie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WassenBeeld">
+        <PropertyRef Name="WassenBeeldId" />
+      </Principal>
+      <Dependent Role="Kopie">
+        <PropertyRef Name="WassenBeeld" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WassenBeeldMaker">
+    <End Role="Persoon" Type="Self.Persoon" Multiplicity="1" />
+    <End Role="WassenBeeld" Type="Self.WassenBeeld" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persoon">
+        <PropertyRef Name="PersoonId" />
+      </Principal>
+      <Dependent Role="WassenBeeld">
+        <PropertyRef Name="Maker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="deHerbeeldingModelStoreContainer">
+    <EntitySet Name="Adres" EntityType="Self.Adres" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Afmetingen" EntityType="Self.Afmetingen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Beeld" EntityType="Self.Beeld" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Boek" EntityType="Self.Boek" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Collage" EntityType="Self.Collage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CursusAdmin" EntityType="Self.CursusAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CursusAfgietenAdmin" EntityType="Self.CursusAfgietenAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CursusBronsgieterAdmin" EntityType="Self.CursusBronsgieterAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CursusInschrijvingAdmin" EntityType="Self.CursusInschrijvingAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dodenmasker" EntityType="Self.Dodenmasker" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DrieDWerken" EntityType="Self.DrieDWerken" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EventCursusAdmin" EntityType="Self.EventCursusAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GeschrevenWerken" EntityType="Self.GeschrevenWerken" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GrootFormaat" EntityType="Self.GrootFormaat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kleischets" EntityType="Self.Kleischets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kopie" EntityType="Self.Kopie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kunstwerk" EntityType="Self.Kunstwerk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MalMatrijs" EntityType="Self.MalMatrijs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Medaille" EntityType="Self.Medaille" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MedailleStamp" EntityType="Self.MedailleStamp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Persoon" EntityType="Self.Persoon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Poezie" EntityType="Self.Poezie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Portret" EntityType="Self.Portret" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Relief" EntityType="Self.Relief" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Schilderij" EntityType="Self.Schilderij" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tekening" EntityType="Self.Tekening" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tentoonstelling" EntityType="Self.Tentoonstelling" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TweeDWerken" EntityType="Self.TweeDWerken" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WassenBeeld" EntityType="Self.WassenBeeld" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Beeld_inherits_DrieDWerken" Association="Self.FK_Beeld_inherits_DrieDWerken">
+      <End Role="DrieDWerken" EntitySet="DrieDWerken" />
+      <End Role="Beeld" EntitySet="Beeld" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BeeldKleischets" Association="Self.FK_BeeldKleischets">
+      <End Role="Kleischets" EntitySet="Kleischets" />
+      <End Role="Beeld" EntitySet="Beeld" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Boek_inherits_GeschrevenWerken" Association="Self.FK_Boek_inherits_GeschrevenWerken">
+      <End Role="GeschrevenWerken" EntitySet="GeschrevenWerken" />
+      <End Role="Boek" EntitySet="Boek" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Collage_inherits_TweeDWerken" Association="Self.FK_Collage_inherits_TweeDWerken">
+      <End Role="TweeDWerken" EntitySet="TweeDWerken" />
+      <End Role="Collage" EntitySet="Collage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CursusAfgietenAdmin_inherits_Cursus" Association="Self.FK_CursusAfgietenAdmin_inherits_Cursus">
+      <End Role="CursusAdmin" EntitySet="CursusAdmin" />
+      <End Role="CursusAfgietenAdmin" EntitySet="CursusAfgietenAdmin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CursusBronsgieterAdmin_inherits_Cursus" Association="Self.FK_CursusBronsgieterAdmin_inherits_Cursus">
+      <End Role="CursusAdmin" EntitySet="CursusAdmin" />
+      <End Role="CursusBronsgieterAdmin" EntitySet="CursusBronsgieterAdmin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CursusInschrijvingAdmin" Association="Self.FK_CursusInschrijvingAdmin">
+      <End Role="CursusAdmin" EntitySet="CursusAdmin" />
+      <End Role="CursusInschrijvingAdmin" EntitySet="CursusInschrijvingAdmin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CursusInschrijvingEventAdmin" Association="Self.FK_CursusInschrijvingEventAdmin">
+      <End Role="CursusInschrijvingAdmin" EntitySet="CursusInschrijvingAdmin" />
+      <End Role="EventCursusAdmin" EntitySet="EventCursusAdmin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dodenmasker_inherits_DrieDWerken" Association="Self.FK_Dodenmasker_inherits_DrieDWerken">
+      <End Role="DrieDWerken" EntitySet="DrieDWerken" />
+      <End Role="Dodenmasker" EntitySet="Dodenmasker" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DodenmaskerContact" Association="Self.FK_DodenmaskerContact">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="Dodenmasker" EntitySet="Dodenmasker" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrieDWerken_inherits_Kunstwerk" Association="Self.FK_DrieDWerken_inherits_Kunstwerk">
+      <End Role="Kunstwerk" EntitySet="Kunstwerk" />
+      <End Role="DrieDWerken" EntitySet="DrieDWerken" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrieDWerkenMal" Association="Self.FK_DrieDWerkenMal">
+      <End Role="MalMatrijs" EntitySet="MalMatrijs" />
+      <End Role="DrieDWerken" EntitySet="DrieDWerken" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrieDWerkenWerkplaats" Association="Self.FK_DrieDWerkenWerkplaats">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="DrieDWerken" EntitySet="DrieDWerken" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GeschrevenWerken_inherits_Kunstwerk" Association="Self.FK_GeschrevenWerken_inherits_Kunstwerk">
+      <End Role="Kunstwerk" EntitySet="Kunstwerk" />
+      <End Role="GeschrevenWerken" EntitySet="GeschrevenWerken" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GrootFormaat_inherits_GeschrevenWerken" Association="Self.FK_GrootFormaat_inherits_GeschrevenWerken">
+      <End Role="GeschrevenWerken" EntitySet="GeschrevenWerken" />
+      <End Role="GrootFormaat" EntitySet="GrootFormaat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GrootKoper" Association="Self.FK_GrootKoper">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="GrootFormaat" EntitySet="GrootFormaat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kleischets_inherits_DrieDWerken" Association="Self.FK_Kleischets_inherits_DrieDWerken">
+      <End Role="DrieDWerken" EntitySet="DrieDWerken" />
+      <End Role="Kleischets" EntitySet="Kleischets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KopieKoper" Association="Self.FK_KopieKoper">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="Kopie" EntitySet="Kopie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KopieMaker" Association="Self.FK_KopieMaker">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="Kopie" EntitySet="Kopie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KunstwerkAfmetingen" Association="Self.FK_KunstwerkAfmetingen">
+      <End Role="Kunstwerk" EntitySet="Kunstwerk" />
+      <End Role="Afmetingen" EntitySet="Afmetingen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KunstwerkTentoonstelling" Association="Self.FK_KunstwerkTentoonstelling">
+      <End Role="Tentoonstelling" EntitySet="Tentoonstelling" />
+      <End Role="Kunstwerk" EntitySet="Kunstwerk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MalKopie" Association="Self.FK_MalKopie">
+      <End Role="MalMatrijs" EntitySet="MalMatrijs" />
+      <End Role="Kopie" EntitySet="Kopie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MalMaker" Association="Self.FK_MalMaker">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="MalMatrijs" EntitySet="MalMatrijs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MalWassenBeeld" Association="Self.FK_MalWassenBeeld">
+      <End Role="WassenBeeld" EntitySet="WassenBeeld" />
+      <End Role="MalMatrijs" EntitySet="MalMatrijs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Medaille_inherits_DrieDWerken" Association="Self.FK_Medaille_inherits_DrieDWerken">
+      <End Role="DrieDWerken" EntitySet="DrieDWerken" />
+      <End Role="Medaille" EntitySet="Medaille" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedailleMedailleStamp" Association="Self.FK_MedailleMedailleStamp">
+      <End Role="Medaille" EntitySet="Medaille" />
+      <End Role="MedailleStamp" EntitySet="MedailleStamp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersoonAdres" Association="Self.FK_PersoonAdres">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="Adres" EntitySet="Adres" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Poezie_inherits_GeschrevenWerken" Association="Self.FK_Poezie_inherits_GeschrevenWerken">
+      <End Role="GeschrevenWerken" EntitySet="GeschrevenWerken" />
+      <End Role="Poezie" EntitySet="Poezie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Portret_inherits_DrieDWerken" Association="Self.FK_Portret_inherits_DrieDWerken">
+      <End Role="DrieDWerken" EntitySet="DrieDWerken" />
+      <End Role="Portret" EntitySet="Portret" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PortretPoseerder" Association="Self.FK_PortretPoseerder">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="Portret" EntitySet="Portret" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Relief_inherits_DrieDWerken" Association="Self.FK_Relief_inherits_DrieDWerken">
+      <End Role="DrieDWerken" EntitySet="DrieDWerken" />
+      <End Role="Relief" EntitySet="Relief" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Schilderij_inherits_TweeDWerken" Association="Self.FK_Schilderij_inherits_TweeDWerken">
+      <End Role="TweeDWerken" EntitySet="TweeDWerken" />
+      <End Role="Schilderij" EntitySet="Schilderij" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StampAfmetingen" Association="Self.FK_StampAfmetingen">
+      <End Role="Afmetingen" EntitySet="Afmetingen" />
+      <End Role="MedailleStamp" EntitySet="MedailleStamp" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tekening_inherits_TweeDWerken" Association="Self.FK_Tekening_inherits_TweeDWerken">
+      <End Role="TweeDWerken" EntitySet="TweeDWerken" />
+      <End Role="Tekening" EntitySet="Tekening" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TentoonstellingAdres" Association="Self.FK_TentoonstellingAdres">
+      <End Role="Tentoonstelling" EntitySet="Tentoonstelling" />
+      <End Role="Adres" EntitySet="Adres" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TweeDWerken_inherits_Kunstwerk" Association="Self.FK_TweeDWerken_inherits_Kunstwerk">
+      <End Role="Kunstwerk" EntitySet="Kunstwerk" />
+      <End Role="TweeDWerken" EntitySet="TweeDWerken" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TweeDWerkenKopie" Association="Self.FK_TweeDWerkenKopie">
+      <End Role="TweeDWerken" EntitySet="TweeDWerken" />
+      <End Role="Kopie" EntitySet="Kopie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TweeDWerkenOpdrachtgever" Association="Self.FK_TweeDWerkenOpdrachtgever">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="TweeDWerken" EntitySet="TweeDWerken" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TweeDWerkenWerkplaats" Association="Self.FK_TweeDWerkenWerkplaats">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="TweeDWerken" EntitySet="TweeDWerken" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WassenBeeldKopie" Association="Self.FK_WassenBeeldKopie">
+      <End Role="WassenBeeld" EntitySet="WassenBeeld" />
+      <End Role="Kopie" EntitySet="Kopie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WassenBeeldMaker" Association="Self.FK_WassenBeeldMaker">
+      <End Role="Persoon" EntitySet="Persoon" />
+      <End Role="WassenBeeld" EntitySet="WassenBeeld" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

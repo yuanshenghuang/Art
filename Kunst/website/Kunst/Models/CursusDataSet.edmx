@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EventsConnectionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cursus">
+          <Key>
+            <PropertyRef Name="CursusId" />
+          </Key>
+          <Property Name="CursusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CursusNaam" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="CursusInfo" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CursusInschrijving">
+          <Key>
+            <PropertyRef Name="CursusInschrijvingId" />
+          </Key>
+          <Property Name="CursusInschrijvingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VoorNaam" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="AchterNaam" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="TelefoonGsm" Type="nvarchar" MaxLength="20" />
+          <Property Name="CursusId" Type="int" Nullable="false" />
+          <Property Name="datum" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_CursusInschrijving">
+          <End Role="Cursus" Type="Self.Cursus" Multiplicity="1" />
+          <End Role="CursusInschrijving" Type="Self.CursusInschrijving" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cursus">
+              <PropertyRef Name="CursusId" />
+            </Principal>
+            <Dependent Role="CursusInschrijving">
+              <PropertyRef Name="CursusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EventsConnectionModelStoreContainer">
+          <EntitySet Name="Cursus" EntityType="Self.Cursus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CursusInschrijving" EntityType="Self.CursusInschrijving" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CursusInschrijving" Association="Self.FK_CursusInschrijving">
+            <End Role="Cursus" EntitySet="Cursus" />
+            <End Role="CursusInschrijving" EntitySet="CursusInschrijving" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EventsConnectionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cursus">
+          <Key>
+            <PropertyRef Name="CursusId" />
+          </Key>
+          <Property Name="CursusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CursusNaam" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CursusInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="CursusInschrijving1" Relationship="EventsConnectionModel.FK_CursusInschrijving1" FromRole="Cursus" ToRole="CursusInschrijving" />
+        </EntityType>
+        <EntityType Name="CursusInschrijving">
+          <Key>
+            <PropertyRef Name="CursusInschrijvingId" />
+          </Key>
+          <Property Name="CursusInschrijvingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VoorNaam" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AchterNaam" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TelefoonGsm" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CursusId" Type="Int32" Nullable="false" />
+          <Property Name="datum" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cursus2" Relationship="EventsConnectionModel.FK_CursusInschrijving1" FromRole="CursusInschrijving" ToRole="Cursus" />
+        </EntityType>
+        <EntityContainer Name="EventsConnectionEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cursus" EntityType="Self.Cursus" />
+          <EntitySet Name="CursusInschrijving" EntityType="Self.CursusInschrijving" />
+          <AssociationSet Name="FK_CursusInschrijving1" Association="EventsConnectionModel.FK_CursusInschrijving1">
+            <End Role="Cursus" EntitySet="Cursus" />
+            <End Role="CursusInschrijving" EntitySet="CursusInschrijving" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_CursusInschrijving1">
+          <End Type="EventsConnectionModel.Cursus" Role="Cursus" Multiplicity="1" />
+          <End Type="EventsConnectionModel.CursusInschrijving" Role="CursusInschrijving" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cursus">
+              <PropertyRef Name="CursusId" />
+            </Principal>
+            <Dependent Role="CursusInschrijving">
+              <PropertyRef Name="CursusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EventsConnectionModelStoreContainer" CdmEntityContainer="EventsConnectionEntities">
+    <EntitySetMapping Name="Cursus">
+      <EntityTypeMapping TypeName="IsTypeOf(EventsConnectionModel.Cursus)">
+        <MappingFragment StoreEntitySet="Cursus">
+          <ScalarProperty Name="CursusId" ColumnName="CursusId" />
+          <ScalarProperty Name="CursusNaam" ColumnName="CursusNaam" />
+          <ScalarProperty Name="CursusInfo" ColumnName="CursusInfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CursusInschrijving">
+      <EntityTypeMapping TypeName="IsTypeOf(EventsConnectionModel.CursusInschrijving)">
+        <MappingFragment StoreEntitySet="CursusInschrijving">
+          <ScalarProperty Name="datum" ColumnName="datum" />
+                <ScalarProperty Name="CursusId" ColumnName="CursusId" />
+                <ScalarProperty Name="CursusInschrijvingId" ColumnName="CursusInschrijvingId" />
+          <ScalarProperty Name="VoorNaam" ColumnName="VoorNaam" />
+          <ScalarProperty Name="AchterNaam" ColumnName="AchterNaam" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="TelefoonGsm" ColumnName="TelefoonGsm" />
+          </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

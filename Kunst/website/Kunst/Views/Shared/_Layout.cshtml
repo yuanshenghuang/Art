@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="@Kunst.Helpers.CultureHelper.GetCurrentNeutralCulture()">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="de heerbeelding, kunst , art" />
+    <meta name="author" content="Francien Maas" />
+    <title>@ViewBag.Title - De Herbeelding</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+   
+   
+  
+</head>
+<body>
+    @{
+        var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+    }
+    @helper selected(string c, string culture)
+    {
+        if (c == culture)
+        {
+            @:checked="checked"
+        }
+    }
+  
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>               
+                @Html.ActionLink(@Resources.Resources.Imagery, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">                    
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Ajax.ActionLink("Contact", "Contact", "Home", null, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace })</li>                                     
+                    <li id="dropdown">
+                        @using (Html.BeginForm("SetCulture", "Kunstwerk"))
+                        {
+
+                            <select class="control-group" id="language" name="culture">
+                                <option class="controls" value="">Selecteer een taal</option>
+                                <option class="controls" id="nl-be" value="nl-be" @selected("nl-be", culture)>Nederlands</option>
+                                <option class="controls" id="en" value="en" @selected("en", culture)>English</option>
+                                <option class="controls" id="fr" value="fr" @selected("fr", culture)>Français</option>
+                                <option class="controls" id="de" value="de" @selected("de", culture)>Deutsch</option>
+                            </select>
+                        }
+
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container body-content">
+
+
+
+            <div class="row">
+
+                    <div class="col-md-3">
+                        <div id='cssmenu' style="z-index:1;">
+                            <ul>                       
+
+                                <li class='active has-sub'>
+                                    <a href="#">@Resources.Resources.ThreeDWorks</a>                            
+                                    <ul>
+                                        <li>@Ajax.ActionLink(@Resources.Resources.Sculpture, "Kunstwerk", "Kunstwerk", new { category = "beeld" }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace })</li>
+                                        <li>@Ajax.ActionLink(@Resources.Resources.DeathMask, "Kunstwerk", "Kunstwerk", new { category = "dodenmasker" }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace })</li>
+                                        <li>@Ajax.ActionLink(@Resources.Resources.ClayDrawing, "Kunstwerk", "Kunstwerk", new { category = "kleischetsen" }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace })</li>
+                                        <li>@Ajax.ActionLink(@Resources.Resources.Medal, "Kunstwerk", "Kunstwerk", new { category = "medaille" }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace })</li>
+                                        <li>@Ajax.ActionLink(@Resources.Resources.Portrait, "Kunstwerk", "Kunstwerk", new { category = "portret" }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace })</li>
+                                        <li>@Ajax.ActionLink(@Resources.Resources.Relief, "Kunstwerk", "Kunstwerk", new { category = "reliëf" }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace }, new { @class = "last" }  )</li>                               
+                                    </ul>
+                                </li>
+
+                                <li class='active has-sub'>
+                                    <a href="#">@Resources.Resources.TwoDWorks</a>
+                                    <ul>
+                                        <li>@Ajax.ActionLink(@Resources.Resources.Collage, "Kunstwerk", "Kunstwerk", new { category = "collage" }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace })</li>
+                                        <li>@Ajax.ActionLink(@Resources.Resources.Painting, "Kunstwerk", "Kunstwerk", new { category = "schilderij" }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace })</li>
+                                        <li>@Ajax.ActionLink(@Resources.Resources.Drawing, "Kunstwerk", "Kunstwerk", new { category = "tekening" }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace }, new { @class = "last" }  )</li>
+                                    </ul>
+                                </li>
+
+                                <li class='active has-sub'>
+                                    <a href="#">@Resources.Resources.WRITTENWORKS</a>
+                                    <ul>
+                                        <li>@Ajax.ActionLink(@Resources.Resources.Book, "Kunstwerk", "Kunstwerk", new { category = "boek" }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace })</li>
+                                        <li>@Ajax.ActionLink(@Resources.Resources.DescriptionSculpture, "Kunstwerk", "Kunstwerk", new { category = "omschrijvingbeeld" }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace })</li>
+                                        <li>@Ajax.ActionLink(@Resources.Resources.Poetry, "Kunstwerk", "Kunstwerk", new { category = "poëzie" }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace }, new { @class = "last" } )</li>                           
+                                    </ul>
+                                </li>
+
+                                <li class='active has-sub'>
+                                    <a href="#">@Resources.Resources.COURSE</a>
+                                    <ul>
+                                        <li>@Ajax.ActionLink(@Resources.Resources.COURSE, "Index", "Cursus", null, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace }, new { @class = "last" })</li>
+                                    </ul>
+                                </li>
+                       
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="wait" style="display:none;width:69px;height:89px;position:absolute;top:50%;left:50%;padding:2px; z-index:2;"><img src="~/Images/spiffygif_30x30.gif" /><br>Loading..</div>
+
+
+                    <div class="col-md-9">
+                        <div id="content">
+                            @RenderBody()
+                        </div>
+                        <hr />
+                        <footer>
+                            <p>&copy; @DateTime.Now.Year - @Resources.Resources.Imagery</p>
+                        </footer>
+                    </div>
+
+            </div>
+
+
+        </div>
+   
+   
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery.unobtrusive-ajax")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval") 
+    @RenderSection("scripts", required: false)
+ 
+   
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+        (function ($) {
+            $('#language').change(function () {
+                $(this).closest('form').submit(); // post form
+            });
+        })(jQuery);
+
+
+        $(document).ajaxStart(function () {
+            $("#wait").css("display", "block");
+        });
+        $(document).ajaxComplete(function () {
+            $("#wait").css("display", "none");
+        });
+
+
+        });
+       
+       
+    </script>
+
+  
+
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿@model Admin.Models.Afmetingen
+@{
+    Layout = null;
+}
+
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title" id="myModalLabel">Are you sure to delete this Address?</h4>
+</div>
+
+
+<div>   
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Hoogte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hoogte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Breedte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Breedte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Diepte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diepte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Diameter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diameter)
+        </dd>    
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="modal-footer">
+        <input type="submit" value="Delete" class="btn btn-default" /> 
+        <input type="button" value="Cancel" data-dismiss="modal" class="btn btn-default" />        
+    </div>
+    }
+</div>

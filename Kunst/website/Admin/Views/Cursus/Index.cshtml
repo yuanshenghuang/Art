@@ -1,0 +1,75 @@
+﻿@model Admin.ViewModels.InschrijvingenViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            CursusNaam
+        </th>
+        <th>
+           CursusInfo
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Cursus) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CursusNaam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CursusInfo)
+        </td>
+        <td>
+            @Html.ActionLink("Select", "Index", new { id=item.CursusId}) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.CursusId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CursusId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CursusId })
+        </td>
+    </tr>
+}
+
+</table>
+
+@if(Model.Cursus != null && Model.Inschrijvingen != null)
+{
+    <table class="table">
+        <tr>
+            <th>VoorNaam</th>
+            <th>AchterNaam</th>
+            <th>Email</th>
+            <th>TelefoonGsm</th>
+            <th>datum</th>
+        </tr>
+
+        @foreach(var item in Model.Inschrijvingen)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.VoorNaam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AchterNaam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TelefoonGsm)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.datum)
+                </td>
+            </tr>
+        }
+
+    </table>
+}

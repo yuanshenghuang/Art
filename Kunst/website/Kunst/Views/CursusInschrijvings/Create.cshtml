@@ -1,0 +1,83 @@
+﻿@model Kunst.Models.CursusInschrijving
+
+@{  
+    Layout = null;
+}
+
+   @using (Ajax.BeginForm("Create", "CursusInschrijvings",
+        new AjaxOptions
+        {
+            HttpMethod = "POST",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "inhoud"
+        }
+     ))
+   {
+    <div id="inhoud">
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>@Resources.Resources.CursusInschrijving</h4>
+            <hr />
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                @Html.LabelFor(model => model.VoorNaam, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.VoorNaam)
+                    @Html.ValidationMessageFor(model => model.VoorNaam)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AchterNaam, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AchterNaam)
+                    @Html.ValidationMessageFor(model => model.AchterNaam)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TelefoonGsm, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TelefoonGsm)
+                    @Html.ValidationMessageFor(model => model.TelefoonGsm)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">@Resources.Resources.Time</label>
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.datum)
+                    @Html.ValidationMessageFor(model => model.datum)
+                </div>
+            </div>
+
+
+            @Html.Hidden("CursusId", (string)ViewBag.cursusId)
+
+
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" id="createsubmitbutton" value="@Resources.Resources.Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+   }
+    
+
+
+@section scripts{
+@Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,53 @@
+﻿@model Kunst.Models.CursusInschrijving
+
+@{
+    ViewBag.Title = "Details";
+    Layout = null;
+}
+
+
+<div>
+    <h4>@Resources.Resources.UwInschrijving</h4>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VoorNaam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VoorNaam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AchterNaam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AchterNaam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.datum)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.datum)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Ajax.ActionLink(@Resources.Resources.Back, "Index", "Cursus", null, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace }, new { style = "color:#ffd800" })
+</p>
+
+
+
+

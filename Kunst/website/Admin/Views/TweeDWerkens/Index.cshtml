@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Admin.Models.TweeDWerken>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Categorie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Titel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BeschrijvingNL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BeschrijvingEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BeschrijvingFR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BeschrijvingDE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Foto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatieMatDrager)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatieMatGebruikt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Signatie)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categorie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BeschrijvingNL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BeschrijvingEN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BeschrijvingFR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BeschrijvingDE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Foto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatieMatDrager)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatieMatGebruikt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Signatie)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.KunstwerkId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.KunstwerkId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.KunstwerkId })
+        </td>
+    </tr>
+}
+
+</table>

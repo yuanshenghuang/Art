@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="deHerbeeldingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Kunstwerk">
+    <Key>
+      <PropertyRef Name="KunstwerkId" />
+    </Key>
+    <Property Name="KunstwerkId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Categorie" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Titel" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BeschrijvingNL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BeschrijvingEN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BeschrijvingFR" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BeschrijvingDE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Speech" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Folder" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Pers" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tentoongesteld" Type="Boolean" />
+    <Property Name="Tentoonstelling" Type="Int32" />
+    <Property Name="Koper" Type="Int32" />
+    <Property Name="Website" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="deHerbeeldingEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Kunstwerk" EntityType="Self.Kunstwerk" />
+  </EntityContainer>
+</Schema>

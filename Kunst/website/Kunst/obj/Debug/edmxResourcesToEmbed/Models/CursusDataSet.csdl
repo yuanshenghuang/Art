@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EventsConnectionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cursus">
+    <Key>
+      <PropertyRef Name="CursusId" />
+    </Key>
+    <Property Name="CursusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CursusNaam" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CursusInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="CursusInschrijving1" Relationship="EventsConnectionModel.FK_CursusInschrijving1" FromRole="Cursus" ToRole="CursusInschrijving" />
+  </EntityType>
+  <EntityType Name="CursusInschrijving">
+    <Key>
+      <PropertyRef Name="CursusInschrijvingId" />
+    </Key>
+    <Property Name="CursusInschrijvingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VoorNaam" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AchterNaam" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TelefoonGsm" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CursusId" Type="Int32" Nullable="false" />
+    <Property Name="datum" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cursus2" Relationship="EventsConnectionModel.FK_CursusInschrijving1" FromRole="CursusInschrijving" ToRole="Cursus" />
+  </EntityType>
+  <EntityContainer Name="EventsConnectionEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cursus" EntityType="Self.Cursus" />
+    <EntitySet Name="CursusInschrijving" EntityType="Self.CursusInschrijving" />
+    <AssociationSet Name="FK_CursusInschrijving1" Association="EventsConnectionModel.FK_CursusInschrijving1">
+      <End Role="Cursus" EntitySet="Cursus" />
+      <End Role="CursusInschrijving" EntitySet="CursusInschrijving" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_CursusInschrijving1">
+    <End Type="EventsConnectionModel.Cursus" Role="Cursus" Multiplicity="1" />
+    <End Type="EventsConnectionModel.CursusInschrijving" Role="CursusInschrijving" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cursus">
+        <PropertyRef Name="CursusId" />
+      </Principal>
+      <Dependent Role="CursusInschrijving">
+        <PropertyRef Name="CursusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

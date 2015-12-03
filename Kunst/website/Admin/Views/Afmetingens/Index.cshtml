@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Admin.Models.Afmetingen>
+
+@{
+    //Layout = null;  
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { id= ViewBag.KunstID}, new { @class = "PopUp" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Hoogte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Breedte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Diepte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Diameter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KunstwerkID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hoogte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Breedte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diepte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diameter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KunstwerkID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.AfmetingenId }, new { @class = "PopUp" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.AfmetingenId }, new { @class = "PopUp" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.AfmetingenId }, new { @class = "PopUp" })
+        </td>
+    </tr>
+}
+
+</table>

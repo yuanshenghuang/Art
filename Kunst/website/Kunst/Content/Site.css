@@ -1,0 +1,92 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+   
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.btn btn-default{
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+textarea
+{
+    font-family: inherit;
+    width: 250px;
+    height: 165px;
+}
+
+html, body {
+    height: auto;
+    /*background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(250,250,230,1.00)),color-stop( 87.56% , rgba(255,198,0,1.00)));
+	background-image: -webkit-linear-gradient(270deg,rgba(250,250,230,1.00) 0%,rgba(255,198,0,1.00) 87.56%);
+	background-image: linear-gradient(180deg,rgba(250,250,230,1.00) 0%,rgba(255,198,0,1.00) 87.56%);*/
+    background-image: url('../Images/bg-body.gif') ;
+    background-repeat:no-repeat;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+   color:white;
+}
+#dropdown {
+        margin-top: 4%;
+    }
+
+.navbar-default{
+    /*background-color:#1fa0e4;*/
+     background-color:#49505a;
+    
+}
+.navbar-default .navbar-nav > li > a {
+   color: white; 
+    }
+
+a,a:active  {color:#ffd800;} 
+
+.validation-summary-errors 
+        {           
+            color: yellow;
+        }
+.field-validation-error {
+        color:yellow;
+    }
