@@ -1,0 +1,32 @@
+﻿html, body {
+    height: auto;   
+    background-image: url('../Images/Blue.jpg') ;
+    background-repeat:no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color:black;
+}
+#dropdown {
+        margin-top: 4%;
+    }
+
+.navbar-default{
+    /*background-color:#1fa0e4;*/
+     background-color:blue;
+    
+}
+.navbar-default .navbar-nav > li > a {
+   color: white; 
+    }
+
+/*a,a:active  {color:#ffd800;}*/ 
+
+/*.validation-summary-errors 
+        {           
+            color: yellow;
+        }*/
+/*.field-validation-error {
+        color:yellow;
+    }*/
