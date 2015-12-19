@@ -234,8 +234,8 @@
   <data name="Create" xml:space="preserve">
     <value>Créer</value>
   </data>
-  <data name="Creatiemateriaal" xml:space="preserve">
-    <value>Matériau de création</value>
+  <data name="Materiaal" xml:space="preserve">
+    <value>Matériau</value>
   </data>
   <data name="CursusInfo" xml:space="preserve">
     <value>Info</value>

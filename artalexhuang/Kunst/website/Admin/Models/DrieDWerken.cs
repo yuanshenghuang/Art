@@ -10,9 +10,9 @@ namespace Admin.Models
     {
         [Required]
         public int Code { get; set; }
-
-        public string CreatieMat { get; set; }
-        public string UitvoeringsMat { get; set; }
+        public Nullable<decimal> Hoogte { get; set; }
+        public Nullable<decimal> Breedte { get; set; }
+        public Nullable<decimal> Diepte { get; set; }
    
        
         

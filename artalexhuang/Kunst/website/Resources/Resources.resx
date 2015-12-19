@@ -231,8 +231,8 @@
   <data name="Breedte" xml:space="preserve">
     <value>Breedte</value>
   </data>
-  <data name="Creatiemateriaal" xml:space="preserve">
-    <value>Creatie materiaal</value>
+  <data name="Materiaal" xml:space="preserve">
+    <value>Materiaal</value>
   </data>
   <data name="CursusInfo" xml:space="preserve">
     <value>Info</value>

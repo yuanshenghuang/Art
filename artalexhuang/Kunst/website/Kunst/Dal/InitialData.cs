@@ -19,8 +19,10 @@ namespace Kunst.Dal
                                  BeschrijvingEN="en",
                                  BeschrijvingDE="de",
                                  Code=2000,
-                                 CreatieMat="creatie materiaal",
-                                 UitvoeringsMat="uitvoeringsmateriaal",
+                                 Materiaal="",
+                                 Hoogte=20,
+                                 Breedte=20,
+                                 Diepte=10, 
                                  Foto="bray.jpg"                                 
                 }
             };
@@ -38,44 +40,16 @@ namespace Kunst.Dal
                                  BeschrijvingFR="fr",
                                  BeschrijvingEN="en",
                                  BeschrijvingDE="de",
-                                 Code="2000",
-                                 CreatieMatDrager="creatie materiaal drager",
-                                 CreatieMatGebruikt="creatie materiaal gebruikt",
-                                 Signatie="signatie",
+                                 Code="2001",
+                                 Materiaal="",
+                                 Hoogte=20,
+                                 Breedte=20,
                                  Foto="closed.jpg"                                   
                 }
             };
 
             tweeDWerkenList.ForEach(s => context.TweeDWerken.Add(s));
             context.SaveChanges();
-
-
-            var geschrevenWerkenList = new List<GeschrevenWerken>
-            {
-                new GeschrevenWerken{
-                      Categorie="boek",
-                                 Titel = "boek",
-                                 BeschrijvingNL="nl",
-                                 BeschrijvingFR="fr",
-                                 BeschrijvingEN="en",
-                                 BeschrijvingDE="de",                                 
-                                 Foto="clown.jpg" 
-                }
-            };
-
-            geschrevenWerkenList.ForEach(s => context.GeschrevenWerken.Add(s));
-            context.SaveChanges();
-
-
-           
-
-
-
-
-
-
-
-
         }
 
 

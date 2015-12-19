@@ -25,9 +25,10 @@ namespace Kunst.Models
         public string BeschrijvingDE { get; set; }
 
         public string Foto { get; set; }
-      
+
+        public string Materiaal { get; set; }  
        
-        public virtual ICollection<Afmetingen> Afmetingen { get; set; }
+     
       
     }
 }

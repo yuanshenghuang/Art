@@ -6,13 +6,14 @@ using System.Web.Mvc;
 using Kunst.Models;
 using Kunst.Helpers;
 using System.IO;
+using Kunst.ViewModels;
 
 namespace Kunst.Controllers
 {
   
     public class KunstwerkController : BaseController
     {
-        public ApplicationDbContext db = new ApplicationDbContext();
+        ApplicationDbContext db = new ApplicationDbContext();
 
 
         public ActionResult Kunstwerk(string category)
@@ -48,46 +49,32 @@ namespace Kunst.Controllers
 
             var kunstWerken = (from x in db.KunstWerken where x.KunstwerkId == id select x);
             var drieDWerken = (from x in db.DrieDWerken where x.KunstwerkId == id select x);
-            var tweeDWerken = (from x in db.TweeDWerken where x.KunstwerkId == id select x);
-            var geschrevenWerken = from x in db.GeschrevenWerken where x.KunstwerkId == id select x;
-            var afmetingen = (from x in db.Afmetingen where x.KunstwerkID == id select x);
-
-
+            var tweeDWerken = (from x in db.TweeDWerken where x.KunstwerkId == id select x);           
+          
 
             if (cultureName == "fr")
             {
-                mymodel.Kunstwerks = kunstWerken.ToList().Select(item => new Kunstwerk { Titel = item.Titel, Categorie = item.Categorie, BeschrijvingFR = item.BeschrijvingFR, Foto = item.Foto }).AsQueryable();
+                mymodel.Kunstwerks = kunstWerken.ToList().Select(item => new Kunstwerk { Titel = item.Titel, Categorie = item.Categorie, BeschrijvingFR = item.BeschrijvingFR, Foto = item.Foto });
                 mymodel.DrieDwerkens = drieDWerken.ToList();
-                mymodel.TweeDwerkens = tweeDWerken.ToList();
-                mymodel.GeschrevenWerkens = geschrevenWerken.ToList().Select(item => new GeschrevenWerken { Titel = item.Titel, Categorie = item.Categorie, BeschrijvingFR = item.BeschrijvingFR, Foto = item.Foto }).AsQueryable();
-                mymodel.afmetingens = afmetingen.ToList();   
+                mymodel.TweeDwerkens = tweeDWerken.ToList();  
             }
             else if (cultureName == "de")
             {
-                mymodel.Kunstwerks = kunstWerken.ToList().Select(item => new Kunstwerk { Titel = item.Titel, Categorie = item.Categorie, BeschrijvingDE = item.BeschrijvingDE, Foto = item.Foto }).AsQueryable();
+                mymodel.Kunstwerks = kunstWerken.ToList().Select(item => new Kunstwerk { Titel = item.Titel, Categorie = item.Categorie, BeschrijvingDE = item.BeschrijvingDE, Foto = item.Foto });
                 mymodel.DrieDwerkens = drieDWerken.ToList();
-                mymodel.TweeDwerkens = tweeDWerken.ToList();
-                mymodel.GeschrevenWerkens = geschrevenWerken.ToList().Select(item => new GeschrevenWerken { Titel = item.Titel, Categorie = item.Categorie, BeschrijvingDE = item.BeschrijvingDE, Foto = item.Foto }).AsQueryable(); 
-                mymodel.afmetingens = afmetingen.ToList();    
-                   
+                mymodel.TweeDwerkens = tweeDWerken.ToList(); 
             }
             else if (cultureName == "en")
             {
-                mymodel.Kunstwerks = kunstWerken.ToList().Select(item => new Kunstwerk { Titel = item.Titel, Categorie = item.Categorie, BeschrijvingEN = item.BeschrijvingEN, Foto = item.Foto }).AsQueryable();
+                mymodel.Kunstwerks = kunstWerken.ToList().Select(item => new Kunstwerk { Titel = item.Titel, Categorie = item.Categorie, BeschrijvingEN = item.BeschrijvingEN, Foto = item.Foto });
                 mymodel.DrieDwerkens = drieDWerken.ToList();
-                mymodel.TweeDwerkens = tweeDWerken.ToList();
-                mymodel.GeschrevenWerkens = geschrevenWerken.ToList().Select(item => new GeschrevenWerken { Titel = item.Titel, Categorie = item.Categorie, BeschrijvingEN = item.BeschrijvingEN, Foto = item.Foto }).AsQueryable();
-                mymodel.afmetingens = afmetingen.ToList();
-                   
+                mymodel.TweeDwerkens = tweeDWerken.ToList();            
             }
             else
             {
-                mymodel.Kunstwerks = kunstWerken.ToList().Select(item => new Kunstwerk { Titel = item.Titel, Categorie = item.Categorie, BeschrijvingNL = item.BeschrijvingNL, Foto = item.Foto }).AsQueryable();
+                mymodel.Kunstwerks = kunstWerken.ToList().Select(item => new Kunstwerk { Titel = item.Titel, Categorie = item.Categorie, BeschrijvingNL = item.BeschrijvingNL, Foto = item.Foto });
                 mymodel.DrieDwerkens = drieDWerken.ToList();
                 mymodel.TweeDwerkens = tweeDWerken.ToList();
-                mymodel.GeschrevenWerkens = geschrevenWerken.ToList().Select(item => new GeschrevenWerken { Titel = item.Titel, Categorie = item.Categorie, BeschrijvingNL = item.BeschrijvingNL, Foto = item.Foto }).AsQueryable(); 
-                mymodel.afmetingens = afmetingen.ToList();
-                   
             }
 
             return PartialView(mymodel);

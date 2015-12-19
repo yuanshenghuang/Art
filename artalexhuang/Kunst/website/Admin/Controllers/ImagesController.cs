@@ -7,9 +7,9 @@ using System.Web.Mvc;
 
 namespace Admin.Controllers
 {
+    [Authorize]
     public class ImagesController : Controller
-    {
-        [Authorize(Roles = "admin")]
+    {       
         public ActionResult GetImage(string imageName)
         {
 

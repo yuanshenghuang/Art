@@ -129,23 +129,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AfmetingensController.cs" />
     <Compile Include="Controllers\CursusController.cs" />
     <Compile Include="Controllers\DrieDWerkensController.cs" />
-    <Compile Include="Controllers\GeschrevenWerkensController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\TweeDWerkensController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Afmetingen.cs" />
     <Compile Include="Models\AdminDbContext.cs" />
     <Compile Include="Models\Cursu.cs" />
     <Compile Include="Models\CursusInschrijving.cs" />
     <Compile Include="Models\CurussenModel.cs" />
     <Compile Include="Models\DrieDWerken.cs" />
-    <Compile Include="Models\GeschrevenWerken.cs" />
     <Compile Include="Models\Kunstwerk.cs" />
     <Compile Include="Models\TweeDWerken.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -158,7 +154,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\AfmetingModal\modalForm.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -193,30 +188,18 @@
     <Content Include="Views\DrieDWerkens\Details.cshtml" />
     <Content Include="Views\DrieDWerkens\Edit.cshtml" />
     <Content Include="Views\DrieDWerkens\Index.cshtml" />
-    <Content Include="Views\Afmetingens\Create.cshtml" />
-    <Content Include="Views\Afmetingens\Delete.cshtml" />
-    <Content Include="Views\Afmetingens\Details.cshtml" />
-    <Content Include="Views\Afmetingens\Edit.cshtml" />
-    <Content Include="Views\Afmetingens\Index.cshtml" />
     <Content Include="Views\TweeDWerkens\Create.cshtml" />
     <Content Include="Views\TweeDWerkens\Delete.cshtml" />
     <Content Include="Views\TweeDWerkens\Details.cshtml" />
     <Content Include="Views\TweeDWerkens\Edit.cshtml" />
     <Content Include="Views\TweeDWerkens\Index.cshtml" />
-    <Content Include="Views\GeschrevenWerkens\Create.cshtml" />
-    <Content Include="Views\GeschrevenWerkens\Delete.cshtml" />
-    <Content Include="Views\GeschrevenWerkens\Details.cshtml" />
-    <Content Include="Views\GeschrevenWerkens\Edit.cshtml" />
-    <Content Include="Views\GeschrevenWerkens\Index.cshtml" />
     <Content Include="Views\Cursus\Create.cshtml" />
     <Content Include="Views\Cursus\Delete.cshtml" />
     <Content Include="Views\Cursus\Details.cshtml" />
     <Content Include="Views\Cursus\Edit.cshtml" />
     <Content Include="Views\Cursus\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

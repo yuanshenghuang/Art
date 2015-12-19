@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace Admin.Controllers
 {
+   
+    [Authorize]
     public class HomeController : Controller
-    {
-        [Authorize(Roles = "admin")]
-        //[Authorize]
+    {        
         public ActionResult Index()
         {
             return View();

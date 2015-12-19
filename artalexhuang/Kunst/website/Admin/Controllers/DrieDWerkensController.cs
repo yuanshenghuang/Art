@@ -11,14 +11,14 @@ using System.IO;
 
 namespace Admin.Controllers
 {
-    [Authorize(Roles = "admin")]
+    [Authorize]
     public class DrieDWerkensController : Controller
     {
         private AdminDbContext db = new AdminDbContext();
 
         // GET: DrieDWerkens
         public ActionResult Index()
-        {
+        {   
             return View(db.DrieDWerken.ToList());
         }
 
@@ -48,7 +48,7 @@ namespace Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "KunstwerkId,Categorie,Titel,BeschrijvingNL,BeschrijvingEN,BeschrijvingFR,BeschrijvingDE,Code,CreatieMat,UitvoeringsMat,Foto")] DrieDWerken drieDWerken, HttpPostedFileBase upload)
+        public ActionResult Create([Bind(Include = "KunstwerkId,Categorie,Titel,BeschrijvingNL,BeschrijvingEN,BeschrijvingFR,BeschrijvingDE,Code,Materiaal,Hoogte,Breedte,Diepte,Foto")] DrieDWerken drieDWerken, HttpPostedFileBase upload)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "KunstwerkId,Categorie,Titel,Foto,BeschrijvingNL,BeschrijvingEN,BeschrijvingFR,BeschrijvingDE,Code,CreatieMat,UitvoeringsMat")] DrieDWerken drieDWerken, HttpPostedFileBase upload)
+        public ActionResult Edit([Bind(Include = "KunstwerkId,Categorie,Titel,BeschrijvingNL,BeschrijvingEN,BeschrijvingFR,BeschrijvingDE,Code,Materiaal,Hoogte,Breedte,Diepte,Foto")] DrieDWerken drieDWerken, HttpPostedFileBase upload)
         {
             if (ModelState.IsValid)
             {

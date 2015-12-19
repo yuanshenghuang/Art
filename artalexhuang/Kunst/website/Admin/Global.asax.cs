@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,11 +14,25 @@ namespace Admin
     {
         protected void Application_Start()
         {
+           
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Admin.Models.AdminDbContext>());
+
+           
+        }
+
+        protected void Application_Error()
+        {
+            var exception = Server.GetLastError();
+            if (exception is HttpException)
+            {
+                var httpException = (HttpException)exception;
+                Response.StatusCode = httpException.GetHttpCode();
+            }
         }
     }
 }

@@ -67,6 +67,7 @@ namespace Kunst.Controllers
             {
                 
                 var user = await UserManager.FindAsync(loginviewmodel.UserName, loginviewmodel.Password);
+
                 if (user != null)
                 { 
                     FormsAuthentication.SetAuthCookie(user.UserName, false); 

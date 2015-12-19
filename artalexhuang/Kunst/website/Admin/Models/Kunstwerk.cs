@@ -16,16 +16,19 @@ namespace Admin.Models
 
         [Required]
         [StringLength(50, MinimumLength = 2)]
-        public string Titel { get; set; }    
-     
+        [Display(Name = "Title")]
+        public string Titel { get; set; }
+
         public string BeschrijvingNL { get; set; }
         public string BeschrijvingEN { get; set; }
         public string BeschrijvingFR { get; set; }
         public string BeschrijvingDE { get; set; }
 
         public string Foto { get; set; }
-       
-        public virtual ICollection<Afmetingen> Afmetingen { get; set; }
+
+        public string Materiaal { get; set; }
+
+      
        
     }
 }

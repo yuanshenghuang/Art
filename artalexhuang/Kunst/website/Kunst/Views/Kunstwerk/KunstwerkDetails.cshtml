@@ -1,4 +1,4 @@
-﻿@model Kunst.Models.KunstwerkViewModel 
+﻿@model Kunst.ViewModels.KunstwerkViewModel 
 
 @{   
     Layout = null;
@@ -17,36 +17,7 @@
             <dd>
                ´@item.Code.ToString().Substring(2,2)
             </dd>
-            <dt>@Resources.Resources.Creatiemateriaal</dt>
-            <dd>
-                @item.CreatieMat
-            </dd>
-            <dt>@Resources.Resources.Uitvoeringsmateriaal</dt>
-            <dd>
-                @item.UitvoeringsMat
-            </dd>           
-           
-        }
-
-        @foreach (var item in Model.TweeDwerkens)
-        {
-            <dt>@Resources.Resources.Jaar</dt>
-            <dd>
-                ´@item.Code.Substring(2, 2)
-            </dd>
-            <dt>@Resources.Resources.Creatiemateriaal</dt>
-            <dd>
-                @item.CreatieMatDrager
-            </dd>
-            <dt>@Resources.Resources.Creatiemateriaal</dt>
-            <dd>
-                @item.CreatieMatGebruikt
-            </dd>
-        }
-
-        @foreach (var item in Model.afmetingens)
-        {
-            <dt>@Resources.Resources.Hoogte</dt>
+            <dt>@Resources.Resources.Hoogte</dt> 
             <dd>
                 @item.Hoogte
             </dd>
@@ -58,11 +29,25 @@
             <dd>
                 @item.Diepte
             </dd>
-            <dt>@Resources.Resources.Diameter</dt>
+        }
+
+        @foreach (var item in Model.TweeDwerkens)
+        {
+            <dt>@Resources.Resources.Jaar</dt>
             <dd>
-                @item.Diameter
+                ´@item.Code.Substring(2, 2)
+            </dd>
+            <dt>@Resources.Resources.Hoogte</dt>
+            <dd>
+                @item.Hoogte
+            </dd>
+            <dt>@Resources.Resources.Breedte</dt>
+            <dd>
+                @item.Breedte
             </dd>
         }
+
+       
 
 
         @foreach (var item in Model.Kunstwerks)
@@ -70,6 +55,10 @@
             <dt>@Resources.Resources.Title</dt>
             <dd>
                 @item.Titel
+            </dd>
+            <dt>@Resources.Resources.Materiaal</dt>
+            <dd>
+                @item.Materiaal
             </dd>
             <dt>@Resources.Resources.Beschrijving</dt>
             <dd>
@@ -100,6 +89,6 @@
 <p>
     @foreach (var item in Model.Kunstwerks)
     {
-        @Ajax.ActionLink(@Resources.Resources.Back, "Kunstwerk", "Kunstwerk", new { category = @item.Categorie }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace }, new { style = "color:#ffd800" })
+        @Ajax.ActionLink(@Resources.Resources.Back, "Kunstwerk", "Kunstwerk", new { category = @item.Categorie }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace })
     }
 </p>

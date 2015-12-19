@@ -11,9 +11,8 @@ namespace Kunst.Models
         [Required]
         [StringLength(50, MinimumLength = 2)]
         public string Code { get; set; }
-        public string CreatieMatDrager { get; set; }
-        public string CreatieMatGebruikt { get; set; }
-        public string Signatie { get; set; }   
+        public Nullable<decimal> Hoogte { get; set; }
+        public Nullable<decimal> Breedte { get; set; }     
      
     }
 }

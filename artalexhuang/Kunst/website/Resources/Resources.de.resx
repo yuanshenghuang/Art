@@ -240,8 +240,8 @@
   <data name="Create" xml:space="preserve">
     <value>Schaffen</value>
   </data>
-  <data name="Creatiemateriaal" xml:space="preserve">
-    <value>Schaffung Material</value>
+  <data name="Materiaal" xml:space="preserve">
+    <value>Material</value>
   </data>
   <data name="CursusInfo" xml:space="preserve">
     <value>Info</value>

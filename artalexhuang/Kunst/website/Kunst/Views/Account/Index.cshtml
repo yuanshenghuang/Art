@@ -43,9 +43,9 @@
             @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.UserName }, new { style = "color:#ffd800" }) |
-            @Html.ActionLink("Roles", "UserRoles", new { id = item.UserName }, new { style = "color:#ffd800" }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.UserName }, new { style = "color:#ffd800" })
+            @Html.ActionLink("Edit", "Edit", new { id = item.UserName }) |
+            @Html.ActionLink("Roles", "UserRoles", new { id = item.UserName }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.UserName })
         </td>
     </tr>
 }

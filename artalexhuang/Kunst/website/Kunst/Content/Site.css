@@ -55,38 +55,3 @@ textarea
     height: 165px;
 }
 
-html, body {
-    height: auto;
-    /*background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(250,250,230,1.00)),color-stop( 87.56% , rgba(255,198,0,1.00)));
-	background-image: -webkit-linear-gradient(270deg,rgba(250,250,230,1.00) 0%,rgba(255,198,0,1.00) 87.56%);
-	background-image: linear-gradient(180deg,rgba(250,250,230,1.00) 0%,rgba(255,198,0,1.00) 87.56%);*/
-    background-image: url('../Images/bg-body.gif') ;
-    background-repeat:no-repeat;
-    -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-   color:white;
-}
-#dropdown {
-        margin-top: 4%;
-    }
-
-.navbar-default{
-    /*background-color:#1fa0e4;*/
-     background-color:#49505a;
-    
-}
-.navbar-default .navbar-nav > li > a {
-   color: white; 
-    }
-
-a,a:active  {color:#ffd800;} 
-
-.validation-summary-errors 
-        {           
-            color: yellow;
-        }
-.field-validation-error {
-        color:yellow;
-    }

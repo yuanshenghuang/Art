@@ -28,8 +28,7 @@ namespace Kunst.Models
 
         }
 
-        public  DbSet<Afmetingen> Afmetingen { get; set; }
-        public DbSet<GeschrevenWerken> GeschrevenWerken { get; set; }        
+            
         public  DbSet<DrieDWerken> DrieDWerken { get; set; }
         public  DbSet<TweeDWerken> TweeDWerken { get; set; }
         public DbSet<Kunstwerk> KunstWerken { get; set; }

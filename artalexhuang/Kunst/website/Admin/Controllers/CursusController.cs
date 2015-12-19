@@ -12,7 +12,7 @@ using Admin.ViewModels;
 
 namespace Admin.Controllers
 {
-    [Authorize(Roles = "admin")]
+    [Authorize]
     public class CursusController : Controller
     {
         private CurussenModel db = new CurussenModel();

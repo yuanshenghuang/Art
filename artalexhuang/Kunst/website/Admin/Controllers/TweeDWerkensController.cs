@@ -10,7 +10,7 @@ using Admin.Models;
 
 namespace Admin.Controllers
 {
-    [Authorize(Roles = "admin")]
+    [Authorize]
     public class TweeDWerkensController : Controller
     {
         private AdminDbContext db = new AdminDbContext();
@@ -47,7 +47,7 @@ namespace Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "KunstwerkId,Categorie,Titel,BeschrijvingNL,BeschrijvingEN,BeschrijvingFR,BeschrijvingDE,Foto,Code,CreatieMatDrager,CreatieMatGebruikt,Signatie")] TweeDWerken tweeDWerken, HttpPostedFileBase upload)
+        public ActionResult Create([Bind(Include = "KunstwerkId,Categorie,Titel,BeschrijvingNL,BeschrijvingEN,BeschrijvingFR,BeschrijvingDE,Code,Materiaal,Hoogte,Breedte,Foto")] TweeDWerken tweeDWerken, HttpPostedFileBase upload)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "KunstwerkId,Categorie,Titel,BeschrijvingNL,BeschrijvingEN,BeschrijvingFR,BeschrijvingDE,Foto,Code,CreatieMatDrager,CreatieMatGebruikt,Signatie")] TweeDWerken tweeDWerken, HttpPostedFileBase upload)
+        public ActionResult Edit([Bind(Include = "KunstwerkId,Categorie,Titel,BeschrijvingNL,BeschrijvingEN,BeschrijvingFR,BeschrijvingDE,Code,Materiaal,Hoogte,Breedte,Foto")] TweeDWerken tweeDWerken, HttpPostedFileBase upload)
         {
             if (ModelState.IsValid)
             {

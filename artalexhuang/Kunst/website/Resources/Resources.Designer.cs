@@ -169,15 +169,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Creatie materiaal.
-        /// </summary>
-        public static string Creatiemateriaal {
-            get {
-                return ResourceManager.GetString("Creatiemateriaal", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Info.
         /// </summary>
         public static string CursusInfo {
@@ -327,6 +318,15 @@ namespace Resources {
         public static string LogOn {
             get {
                 return ResourceManager.GetString("LogOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Materiaal.
+        /// </summary>
+        public static string Materiaal {
+            get {
+                return ResourceManager.GetString("Materiaal", resourceCulture);
             }
         }
         

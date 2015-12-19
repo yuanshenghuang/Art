@@ -23,7 +23,10 @@
 
 
             <td>
-                @Ajax.ActionLink(@Resources.Resources.Details, "KunstwerkDetails", new { id = item.KunstwerkId }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace }, new { style = "color:#ffd800" })
+                @Ajax.ActionLink(@Resources.Resources.Details, "KunstwerkDetails",
+                                new { id = item.KunstwerkId },
+                                new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace }
+                                )
             </td>
         </tr>
     }

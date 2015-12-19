@@ -27,7 +27,7 @@
                     @Html.DisplayFor(modelItem => item.CursusInfo)
                 </td>
                 <td>
-                    @Ajax.ActionLink(@Resources.Resources.Inschrijven, "Create", "CursusInschrijvings", new { id = item.CursusId }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace },  new {@id = "inschrijvenbutton", style = "color:#ffd800" })
+                    @Ajax.ActionLink(@Resources.Resources.Inschrijven, "Create", "CursusInschrijvings", new { id = item.CursusId }, new AjaxOptions { UpdateTargetId = "content", HttpMethod = "get", InsertionMode = InsertionMode.Replace },  new {@id = "inschrijvenbutton"})
                     @*@Html.ActionLink(@Resources.Resources.Inschrijven, "Create", "CursusInschrijvings", new { id = item.CursusId }, new { @class = "inschrijvenbutton", style = "color:#ffd800" })*@
                 </td>
             </tr>

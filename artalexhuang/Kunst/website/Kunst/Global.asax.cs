@@ -27,5 +27,15 @@ namespace Kunst
             //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Kunst.Models.ApplicationDbContext>());
             //Database.SetInitializer(new DropCreateDatabaseAlways<Kunst.Models.ApplicationDbContext>());
         }
+
+        protected void Application_Error()
+        {
+            var exception = Server.GetLastError();
+            if (exception is HttpException)
+            {
+                var httpException = (HttpException)exception;
+                Response.StatusCode = httpException.GetHttpCode();
+            }
+        }
     }
 }

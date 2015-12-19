@@ -1,8 +1,29 @@
-﻿@{
-   
-}
-
+﻿@model PagedList.IPagedList<Kunst.Models.Kunstwerk>
+@using PagedList.Mvc
+@using Kunst.Helpers
 <p>
    gebruikersnaam: admin
    paswoord : AdminAdmin
 </p>
+@foreach (var item in Model)
+{
+    @Ajax.ImageActionLink("image",
+                           String.Format(Url.Action("GetImage", "Kunstwerk", new { imageName = item.Foto }) ),
+                           "image","250","250",
+                           "KunstwerkDetails", "Kunstwerk", new { id = item.KunstwerkId },
+                           new AjaxOptions { HttpMethod = "get", UpdateTargetId = "content", InsertionMode = InsertionMode.Replace })
+    
+    @*<a href='@Url.Action("KunstwerkDetails", "Kunstwerk", new { id= item.KunstwerkId})' class="ViewImageDetail" id="@item.KunstwerkId">
+        <img src="@Url.Action("GetImage", "Kunstwerk", new { imageName = item.Foto })" alt="" width="250" height="250" />
+    </a>*@
+}
+
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of  @Model.PageCount
+<div id="contentPager">
+    @Html.PagedListPager(Model, page => Url.Action("Index", "Home",
+new
+{
+    page
+}))
+</div>
